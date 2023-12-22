@@ -36,7 +36,10 @@ const AnimalList = () => {
                 {animals?.map((animal) => (
                     <li key={animal.id}>
                         <strong>{animal.name}</strong> - {animal.species} -
-                        {animal.image}
+                        <p>
+                            {' '}
+                            <img src={animal.image} alt={animal.name} />{' '}
+                        </p>
                     </li>
                 ))}
             </ul>
