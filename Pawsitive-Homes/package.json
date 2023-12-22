@@ -20,7 +20,8 @@
         "axios": "^1.6.2",
         "embla-carousel-react": "^7.1.0",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.21.1"
     },
     "devDependencies": {
         "@types/react": "^18.2.43",
