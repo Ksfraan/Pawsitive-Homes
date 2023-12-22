@@ -4,6 +4,7 @@ import DashboardPage from '../src/pages/DashboardPage';
 import AboutPage from './pages/AboutPage';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
+import Header from '../src/components/Header'
 //import AnimalList from './components/AnimalList';
 //import { useState } from 'react';
 //import api from './services/api';
@@ -11,6 +12,7 @@ import SignUp from './pages/SignUp';
 const App = () => {
     return (
         <div>
+            <Header />
             <Routes>
                 <Route path='/' element={<DashboardPage />} />
                 <Route path='/about' element={<AboutPage />} />
