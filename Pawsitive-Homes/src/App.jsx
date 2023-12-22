@@ -1,9 +1,15 @@
 //import { useState } from 'react';
+//import api from './services/api';
 
-import './App.css';
+import AnimalList from './components/AnimalList';
 
-function App() {
-    return <></>;
-}
+const App = () => {
+    return (
+        <div>
+            <h1>Pawsitive Homes</h1>
+            <AnimalList />
+        </div>
+    );
+};
 
 export default App;
