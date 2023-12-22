@@ -35,7 +35,8 @@ const AnimalList = () => {
             <ul>
                 {animals?.map((animal) => (
                     <li key={animal.id}>
-                        <strong>{animal.name}</strong> - {animal.species} -{' '}
+                        <strong>{animal.name}</strong> - {animal.species} -
+                        {animal.image}
                     </li>
                 ))}
             </ul>
