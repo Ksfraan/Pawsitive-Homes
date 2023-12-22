@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import Header from '../src/components/Header'
+import { MantineProvider } from '@mantine/core';
 //import AnimalList from './components/AnimalList';
 //import { useState } from 'react';
 //import api from './services/api';

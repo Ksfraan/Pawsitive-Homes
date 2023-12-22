@@ -1,0 +1,14 @@
+.header {
+    background-color: #006eb4ff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.buttonContainer {
+}
+
+.buttonContainer button {
+}
