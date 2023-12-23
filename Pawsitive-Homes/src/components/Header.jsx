@@ -7,12 +7,25 @@ import '../styles/header.css';
 function Header() {
     return (
         <div className='header'>
-            <img src={OrganizationName} alt='Organization Name' />
-            <img src={MainLogo} alt='Main Logo' />
+            <img
+                src={OrganizationName}
+                alt='Organization Name'
+                className='organization-name'
+            />
+            <img src={MainLogo} alt='Main Logo' className='main-logo' />
             <div className='buttonContainer'>
                 <Button
                     variant='filled'
-                    color='#7A2048'
+                    color='#ea93ea'
+                    size='lg'
+                    radius='md'
+                    className='Home-Page-button'
+                >
+                    <Link to='/'>Home Page</Link>
+                </Button>
+                <Button
+                    variant='filled'
+                    color='#ea93ea'
                     size='lg'
                     radius='md'
                     className='dogs-button'
@@ -21,7 +34,7 @@ function Header() {
                 </Button>
                 <Button
                     variant='filled'
-                    color='#7A2048'
+                    color='#ea93ea'
                     size='lg'
                     radius='md'
                     className='cats-button'
@@ -30,7 +43,7 @@ function Header() {
                 </Button>
                 <Button
                     variant='filled'
-                    color='#7A2048'
+                    color='#ea93ea'
                     size='lg'
                     radius='md'
                     className='OtherAnimals-button'
@@ -39,7 +52,7 @@ function Header() {
                 </Button>
                 <Button
                     variant='filled'
-                    color='#7A2048'
+                    color='#ea93ea'
                     size='lg'
                     radius='md'
                     className='SignUp-button'
@@ -48,21 +61,12 @@ function Header() {
                 </Button>
                 <Button
                     variant='filled'
-                    color='#7A2048'
+                    color='#ea93ea'
                     size='lg'
                     radius='md'
                     className='LogIn-button'
                 >
                     <Link to='/login'>Log In</Link>
-                </Button>
-                <Button
-                    variant='filled'
-                    color='#7A2048'
-                    size='lg'
-                    radius='md'
-                    className='dogs-button'
-                >
-                    <Link to='/'>Home Page</Link>
                 </Button>
             </div>
         </div>

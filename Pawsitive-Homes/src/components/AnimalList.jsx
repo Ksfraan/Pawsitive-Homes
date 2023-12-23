@@ -1,50 +1,44 @@
-import { useEffect, useState } from 'react';
-import api from '../services/api';
+import PropTypes from 'prop-types';
 
-const AnimalList = () => {
-    const [animals, setAnimals] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const fetchAnimals = async () => {
-            try {
-                const response = await api.get('/animals');
-                setAnimals(response.data);
-            } catch (error) {
-                console.error('Error fetching animals:', error);
-                setError('Error loading animals.');
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchAnimals();
-    }, []);
-
-    if (loading) {
-        return <p>Loading...</p>;
-    }
-
-    if (error) {
-        return <p>{error}</p>;
-    }
+const AnimalList = ({ animals, animalSpecies }) => {
+    let title = animalSpecies;
 
     return (
-        <div>
-            <h2>Animal List</h2>
+        <div className='animals-list'>
+            <h2>{title} </h2>
             <ul>
-                {animals?.map((animal) => (
-                    <li key={animal.id}>
-                        <strong>{animal.name}</strong> - {animal.species} -
-                        <p>
-                            {' '}
-                            <img src={animal.image} alt={animal.name} />{' '}
-                        </p>
-                    </li>
-                ))}
+                {animals
+                    ? animals?.map((animal) => (
+                          <li key={animal.id}>
+                              <p>
+                                  <strong>{animal.name}</strong> -{' '}
+                                  {animal.species}{' '}
+                              </p>
+                              <p>
+                                  {' '}
+                                  <img
+                                      src={animal.image}
+                                      alt={animal.name}
+                                  />{' '}
+                              </p>
+                          </li>
+                      ))
+                    : null}
             </ul>
         </div>
     );
+};
+
+AnimalList.propTypes = {
+    animals: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            species: PropTypes.string.isRequired,
+            image: PropTypes.string.isRequired,
+        })
+    ),
+    animalSpecies: PropTypes.string.isRequired,
 };
 
 export default AnimalList;
