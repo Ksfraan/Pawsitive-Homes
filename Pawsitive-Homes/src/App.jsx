@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 import AnimalList from './components/AnimalList';
 import DashboardPage from './pages/DashboardPage';
 import { useEffect, useState } from 'react';
-import api from './services/api';
+import animalsApi from './services/animalsApi';
 
 const App = () => {
     const [animals, setAnimals] = useState([]);
@@ -21,7 +21,7 @@ const App = () => {
     useEffect(() => {
         const fetchAnimals = async () => {
             try {
-                const response = await api.get('/animals');
+                const response = await animalsApi.get('/animals');
 
                 const animalsData = response.data;
 
