@@ -66,8 +66,8 @@ const App = () => {
             <Header />
             <Navbar />
             <Routes>
-                <Route path='/' element={<DashboardPage />} />
-                {/* <Route path='/' element={<AnimalList animals={animals} />} /> */}
+                <Route path='/' element={<DashboardPage animals={animals} />} />
+
                 <Route
                     path='/dogs'
                     element={<AnimalList animals={dogs} animalSpecies='Dog' />}

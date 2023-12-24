@@ -5,22 +5,16 @@ const AnimalList = ({ animals, animalSpecies }) => {
 
     return (
         <div className='animals-list'>
-            <h2>{title} </h2>
+            <h2>{title}</h2>
             <ul>
                 {animals
                     ? animals?.map((animal) => (
                           <li key={animal.id}>
                               <p>
-                                  <strong>{animal.name}</strong> -{' '}
-                                  {animal.species}{' '}
+                                  <strong>{`${animal.name} - `}</strong>
+                                  {animal.species}
                               </p>
-                              <p>
-                                  {' '}
-                                  <img
-                                      src={animal.image}
-                                      alt={animal.name}
-                                  />{' '}
-                              </p>
+                              <img src={animal.image} alt={animal.name} />
                           </li>
                       ))
                     : null}
