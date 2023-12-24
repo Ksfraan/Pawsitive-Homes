@@ -1,16 +1,15 @@
-import { Text } from '@mantine/core';
+import Cat404 from '../assets/404.jpg'
+import '../styles/Page404.css'
 
 
 function Page404() {
     return(
-        <div>
-            <Text
-        size="xl"
-        fw={900}
-        variant="gradient"
-        align="center"
-        gradient={{ from: '#006eb4ff', to: '#1E2761', deg: 90 }}
-        >404 Page</Text>
+        <div className='notFound'>
+            <>
+                <img src={Cat404} alt="Not Found" />
+            </>
+            <h2>404 Meowrror: What in the whiskers brought you here? This zone is a </h2> 
+            <h2>no-human territory! Meow-ve along, and leave the coding to the cats.</h2> 
         </div>
     )
 }

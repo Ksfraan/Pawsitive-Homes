@@ -1,0 +1,16 @@
+.notFound {
+    background-color: #0B0B0B;
+    height: 100vh;
+    text-align: center;
+}
+
+.notFound img {
+    width: 100vw;
+    max-width: 1200px;
+    margin: 0%;
+    padding: auto 5%;
+}
+
+.notFound h2 {
+    color: white;       
+}
