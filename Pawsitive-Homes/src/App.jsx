@@ -4,7 +4,9 @@ import AboutPage from './pages/AboutPage';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import Header from '../src/components/Header';
+import Navbar from './components/Navbar';
 import AnimalList from './components/AnimalList';
+import DashboardPage from './pages/DashboardPage';
 import { useEffect, useState } from 'react';
 import api from './services/api';
 
@@ -62,8 +64,10 @@ const App = () => {
     return (
         <div>
             <Header />
+            <Navbar />
             <Routes>
-                <Route path='/' element={<AnimalList animals={animals} />} />
+                <Route path='/' element={<DashboardPage />} />
+                {/* <Route path='/' element={<AnimalList animals={animals} />} /> */}
                 <Route
                     path='/dogs'
                     element={<AnimalList animals={dogs} animalSpecies='Dog' />}

@@ -1,0 +1,9 @@
+.Navbar {
+    background-color: #408EC6;
+    display: flex;    
+    align-content: center;
+}
+
+.Navbar p {    
+    margin: 0 auto;    
+}

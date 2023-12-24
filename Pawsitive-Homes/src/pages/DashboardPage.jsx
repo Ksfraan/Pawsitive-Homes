@@ -1,9 +1,11 @@
 import AnimalList from '../components/AnimalList';
+import TopDashboard from '../assets/TopDashboard.png';
+import '../styles/DashboardPage.css';
 
 function DashboardPage() {
     return (
-        <div>
-            <h1>Pawsitive Homes</h1>
+        <div className='Dashboard'>
+            <img src={TopDashboard} alt="Animals" />
             <AnimalList />
         </div>
     );

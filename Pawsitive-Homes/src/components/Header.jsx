@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import OrganizationName from '../assets/OrganizationName.png';
 import MainLogo from '../assets/MainLogo.png';
 import { Button } from '@mantine/core';
-import '../styles/header.css';
+import '../styles/Header.css';
 
 function Header() {
     return (
