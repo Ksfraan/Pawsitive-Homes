@@ -1,9 +1,14 @@
-.Navbar {
-    background-color: #408EC6;
-    display: flex;    
-    align-content: center;
+.navbar {
+    background-color: #408ec6;
 }
 
-.Navbar p {    
-    margin: 0 auto;    
+.navbar-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.3em;
+}
+
+.navbar a {
+    color: white;
 }

@@ -11,8 +11,9 @@ const AnimalList = ({ animals, animalSpecies }) => {
                     ? animals?.map((animal) => (
                           <li key={animal.id}>
                               <p>
-                                  <strong>{`${animal.name} - `}</strong>
-                                  {animal.species}
+                                  <strong>{`${animal.name}:`}</strong>{' '}
+                                  {animal.species} {'-'} <strong>age: </strong>
+                                  {`${animal.age} year(s) old`}
                               </p>
                               <img src={animal.image} alt={animal.name} />
                           </li>

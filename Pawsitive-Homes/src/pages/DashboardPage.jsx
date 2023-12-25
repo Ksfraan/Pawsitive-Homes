@@ -5,9 +5,16 @@ import PropTypes from 'prop-types';
 
 function DashboardPage({ animals }) {
     return (
-        <div className='Dashboard'>
-            <img src={TopDashboard} alt='List of animals' />
-            <h3>Animals for adoption</h3>
+        <div className='dashboard-page-wrapper'>
+            <img
+                src={TopDashboard}
+                alt='image of a dog, a cat and a parrot'
+                className='dashboard-animals-images'
+            />
+
+            <center>
+                <h1>Animals for adoption</h1>
+            </center>
             <AnimalList animals={animals} animalSpecies='All Species' />
         </div>
     );

@@ -1,3 +1,9 @@
-.Dashboard img {
+.dashboard-page-wrapper h1 {
+    color: #1e2761;
+    text-transform: uppercase;
+    justify-items: center;
+}
+
+.dashboard-animals-images {
     width: 100vw;
 }
