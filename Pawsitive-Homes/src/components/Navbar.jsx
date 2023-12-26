@@ -22,6 +22,7 @@ function Navbar() {
                     {renderButtonLink('/dogs', 'Dogs')}
                     {renderButtonLink('/cats', 'Cats')}
                     {renderButtonLink('/other-animals', 'Other Animals')}
+                    {renderButtonLink('/add-animal', 'Add an animal')}
                 </div>
             </div>
         </div>

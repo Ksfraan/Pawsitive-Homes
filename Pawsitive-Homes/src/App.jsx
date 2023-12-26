@@ -10,6 +10,7 @@ import DashboardPage from './pages/DashboardPage';
 import AnimalsInfoDetails from './pages/AnimalsInfoDetails';
 import { useEffect, useState } from 'react';
 import animalsApi from './services/animalsApi';
+import AnimalForm from './pages/AnimalForm';
 
 const App = () => {
     const [animals, setAnimals] = useState([]);
@@ -87,6 +88,7 @@ const App = () => {
                     path='/animal/:id'
                     element={<AnimalsInfoDetails animals={animals} />}
                 />
+                <Route path='/add-animal' element={<AnimalForm />} />
                 <Route path='/about' element={<AboutPage />} />
                 <Route path='/login' element={<LogIn />} />
                 <Route path='/signup' element={<SignUp />} />

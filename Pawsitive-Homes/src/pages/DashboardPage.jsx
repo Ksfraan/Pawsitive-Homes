@@ -26,10 +26,10 @@ function DashboardPage({ animals }) {
 DashboardPage.propTypes = {
     animals: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            name: PropTypes.string.isRequired,
-            species: PropTypes.string.isRequired,
-            image: PropTypes.string.isRequired,
+            id: PropTypes.number,
+            name: PropTypes.string,
+            species: PropTypes.string,
+            image: PropTypes.string,
         })
     ),
 };

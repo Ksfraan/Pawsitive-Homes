@@ -1,0 +1,30 @@
+.add-animal-form {
+    display: flex;
+    flex-direction: column;
+    width: 22em;
+    margin-top: 2em;
+    padding-bottom: 2em;
+    gap: 1em;
+    justify-content: left;
+    align-items: left;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-animal-form input {
+    width: 100%;
+    margin-left: 1em;
+}
+
+.add-animal-form label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-description {
+    height: 3em;
+}
