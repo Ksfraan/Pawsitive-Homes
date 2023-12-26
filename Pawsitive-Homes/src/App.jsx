@@ -5,9 +5,9 @@ import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import Header from '../src/components/Header';
 import Navbar from './components/Navbar';
-import AnimalList from './components/AnimalList';
+import AnimalList from './pages/AnimalList';
 import DashboardPage from './pages/DashboardPage';
-import AnimalsInfoDetails from './components/AnimalsInfoDetails';
+import AnimalsInfoDetails from './pages/AnimalsInfoDetails';
 import { useEffect, useState } from 'react';
 import animalsApi from './services/animalsApi';
 
@@ -22,7 +22,7 @@ const App = () => {
     useEffect(() => {
         const fetchAnimals = async () => {
             try {
-                const response = await animalsApi.get('/animals');
+                const response = animalsApi.getAnimals;
 
                 const animalsData = response.data;
 
