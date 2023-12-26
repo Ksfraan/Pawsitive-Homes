@@ -7,6 +7,7 @@ import Header from '../src/components/Header';
 import Navbar from './components/Navbar';
 import AnimalList from './components/AnimalList';
 import DashboardPage from './pages/DashboardPage';
+import AnimalsInfoDetails from './components/AnimalsInfoDetails';
 import { useEffect, useState } from 'react';
 import animalsApi from './services/animalsApi';
 
@@ -81,6 +82,10 @@ const App = () => {
                     element={
                         <AnimalList animals={others} animalSpecies='Others' />
                     }
+                />
+                <Route
+                    path='/animal/:id'
+                    element={<AnimalsInfoDetails animals={animals} />}
                 />
                 <Route path='/about' element={<AboutPage />} />
                 <Route path='/login' element={<LogIn />} />

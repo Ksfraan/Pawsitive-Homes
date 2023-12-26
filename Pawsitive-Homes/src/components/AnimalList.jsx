@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const AnimalList = ({ animals, animalSpecies }) => {
     let title = animalSpecies;
@@ -15,7 +16,9 @@ const AnimalList = ({ animals, animalSpecies }) => {
                                   {animal.species} {'-'} <strong>age: </strong>
                                   {`${animal.age} year(s) old`}
                               </p>
-                              <img src={animal.image} alt={animal.name} />
+                              <Link to={`/animal/${animal.id}`}>
+                                  <img src={animal.image} alt={animal.name} />
+                              </Link>
                           </li>
                       ))
                     : null}
