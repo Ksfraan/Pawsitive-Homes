@@ -1,15 +1,24 @@
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PageContainer from '../components/PageContainer';
+import AnimalUpdateForm from '../components/AnimalUpdateForm';
 import api from '../services/animalsApi';
 import { Button } from '@mantine/core';
 import { useState } from 'react';
 
-function AnimalsInfoDetails({ animals }) {
+function AnimalsInfoDetails({ animals, setAnimals }) {
     const { id } = useParams();
     const [isDeleted, setIsDeleted] = useState(false);
 
     const details = animals.find((animal) => String(animal.id) === String(id));
+
+    const updateAnimalInState = (updatedAnimal) => {
+        setAnimals((prevAnimals) => {
+            return prevAnimals.map((animal) =>
+                animal.id === updatedAnimal.id ? updatedAnimal : animal
+            );
+        });
+    };
 
     const handleDeleteAnimal = async () => {
         try {
@@ -41,6 +50,11 @@ function AnimalsInfoDetails({ animals }) {
                 </p>
                 <img src={details.image} alt={details.name} />
                 <Button onClick={handleDeleteAnimal}>Delete Animal</Button>
+
+                <AnimalUpdateForm
+                    animal={details}
+                    onUpdate={updateAnimalInState}
+                />
             </div>
         </PageContainer>
     ) : (
@@ -52,6 +66,7 @@ function AnimalsInfoDetails({ animals }) {
 
 AnimalsInfoDetails.propTypes = {
     animals: PropTypes.array.isRequired,
+    setAnimals: PropTypes.func.isRequired,
 };
 
 export default AnimalsInfoDetails;

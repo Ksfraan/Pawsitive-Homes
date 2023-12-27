@@ -86,7 +86,12 @@ const App = () => {
                 />
                 <Route
                     path='/animal/:id'
-                    element={<AnimalsInfoDetails animals={animals} />}
+                    element={
+                        <AnimalsInfoDetails
+                            animals={animals}
+                            setAnimals={setAnimals}
+                        />
+                    }
                 />
                 <Route path='/add-animal' element={<AnimalForm />} />
                 <Route path='/about' element={<AboutPage />} />
