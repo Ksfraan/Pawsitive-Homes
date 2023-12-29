@@ -31,31 +31,47 @@ function AnimalsInfoDetails({ animals, setAnimals }) {
     };
     return details && !isDeleted ? (
         <PageContainer>
-            <div className='animals-details-page-wrapper'>
-                <h1>{details.title}</h1>
-                <p>
-                    <strong>Name:</strong> {details.name}
-                </p>
-                <p>
-                    <strong>Breed:</strong> {details.breed}
-                </p>
-                <p>
-                    <strong>Age:</strong> {details.age}
-                </p>
-                <p>
-                    <strong>Gender:</strong> {details.gender}
-                </p>
-                <p>
-                    <strong>Description:</strong> {details.description}
-                </p>
-                <img src={details.image} alt={details.name} />
-                <Button onClick={handleDeleteAnimal}>Delete Animal</Button>
-
+            <>
+                <div className='animals-details-page-wrapper'>
+                    <div className='additional-information-and-button'>
+                        <h1>Additional Information</h1>
+                        <Button onClick={handleDeleteAnimal}>
+                            Delete Animal
+                        </Button>
+                    </div>
+                    <div className='animal-details-with-image'>
+                        <div className='animal-details-without-image'>
+                            <p>
+                                <strong>Name:</strong> {details.name}
+                            </p>
+                            <p>
+                                <strong>Breed:</strong> {details.breed}
+                            </p>
+                            <p>
+                                <strong>Age:</strong> {details.age}
+                            </p>
+                            <p>
+                                <strong>Gender:</strong> {details.gender}
+                            </p>
+                            <p>
+                                <strong>Description:</strong>{' '}
+                                {details.description}
+                            </p>
+                            <p>
+                                <strong>City:</strong> {details.city}
+                            </p>
+                            <p>
+                                <strong>Health:</strong> {details.health}
+                            </p>
+                        </div>
+                        <img src={details.image} alt={details.name} />
+                    </div>
+                </div>
                 <AnimalUpdateForm
                     animal={details}
                     onUpdate={updateAnimalInState}
                 />
-            </div>
+            </>
         </PageContainer>
     ) : (
         <p>

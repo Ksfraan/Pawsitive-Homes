@@ -4,7 +4,6 @@ import { Button } from '@mantine/core';
 import { useState } from 'react';
 import PageContainer from '../components/PageContainer';
 import '../styles/AnimalForm.css';
-//import PropTypes from 'prop-types';
 
 const initialFormData = {
     id: '',
@@ -16,6 +15,8 @@ const initialFormData = {
     description: '',
     image: '',
     available_for_adoption: '',
+    city: '',
+    health: '',
 };
 
 const AnimalForm = () => {
@@ -52,7 +53,8 @@ const AnimalForm = () => {
     return (
         <PageContainer>
             <div className='form-container'>
-                <form onSubmit={handleSubmit} className='add-animal-form'>
+                <h1>Add an animal</h1>
+                <form onSubmit={handleSubmit} className='animal-form'>
                     {renderLabelWithInput('Name', {
                         type: 'text',
                         value: formData.name,
@@ -60,7 +62,6 @@ const AnimalForm = () => {
                     })}
                     {renderLabelWithInput('Species', {
                         type: 'text',
-
                         value: formData.species,
                         name: 'species',
                     })}
@@ -77,10 +78,26 @@ const AnimalForm = () => {
                         value: formData.age,
                         name: 'age',
                     })}
-                    {renderLabelWithInput('Description', {
-                        className: 'form-description',
-                        value: formData.description,
-                        name: 'description',
+                    <label>
+                        Description:
+                        <textarea
+                            type='text'
+                            name='description'
+                            value={formData.description}
+                            onChange={handleChange}
+                            required
+                            className='form-description'
+                        />
+                    </label>
+                    {renderLabelWithInput('City', {
+                        type: 'text',
+                        value: formData.city,
+                        name: 'city',
+                    })}
+                    {renderLabelWithInput('Health', {
+                        type: 'text',
+                        value: formData.health,
+                        name: 'health',
                     })}
                     {renderLabelWithInput('Photo', {
                         value: formData.image,
@@ -121,9 +138,5 @@ const AnimalForm = () => {
         </PageContainer>
     );
 };
-
-// AnimalForm.propTypes = {
-//     onAdd: PropTypes.array.isRequired,
-// };
 
 export default AnimalForm;

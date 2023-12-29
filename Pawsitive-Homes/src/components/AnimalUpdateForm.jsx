@@ -50,11 +50,9 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
     };
 
     return (
-        <div>
-            <form
-                onSubmit={handleSubmit}
-                className='update-animal-form-wrapper'
-            >
+        <div className='form-container'>
+            <h1>Update an animal</h1>
+            <form onSubmit={handleSubmit} className='animal-form'>
                 <label>
                     Name:
                     <input
@@ -63,7 +61,6 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className='input-field-update'
                     />
                 </label>
                 <label>
@@ -74,7 +71,6 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
                         value={formData.species}
                         onChange={handleChange}
                         required
-                        className='input-field-update'
                     />
                 </label>
                 <label>
@@ -85,7 +81,6 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
                         value={formData.breed}
                         onChange={handleChange}
                         required
-                        className='input-field-update'
                     />
                 </label>
                 <label>
@@ -96,19 +91,38 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
                         value={formData.age}
                         onChange={handleChange}
                         required
-                        className='input-field-update'
                     />
                 </label>
 
                 <label>
                     Description:
-                    <input
+                    <textarea
                         type='text'
                         name='description'
                         value={formData.description}
                         onChange={handleChange}
                         required
-                        className='input-field-update'
+                        className='form-description'
+                    />
+                </label>
+                <label>
+                    City:
+                    <input
+                        type='text'
+                        name='city'
+                        value={formData.city}
+                        onChange={handleChange}
+                        required
+                    />
+                </label>
+                <label>
+                    Health:
+                    <input
+                        type='text'
+                        name='health'
+                        value={formData.health}
+                        onChange={handleChange}
+                        required
                     />
                 </label>
                 <label>
@@ -137,7 +151,6 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
                         placeholder='Ex: www.myimage.png'
                         onChange={handleChange}
                         required
-                        className='input-field-update'
                     />
                 </label>
 
