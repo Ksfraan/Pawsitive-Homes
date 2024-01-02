@@ -13,6 +13,8 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
         description: '',
         available_for_adoption: '',
         image: '',
+        city: '',
+        health: '',
     });
 
     useEffect(() => {
@@ -23,8 +25,10 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
             age: animal.age || '',
             gender: animal.gender || '',
             description: animal.description || '',
-            available_for_adoption: String(animal.available_for_adoption) || '',
+            available_for_adoption: animal.available_for_adoption || '',
             image: animal.image || '',
+            city: animal.city || '',
+            health: animal.health || '',
         });
     }, [animal]);
 
@@ -59,16 +63,6 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
                         type='text'
                         name='name'
                         value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <label>
-                    Species:
-                    <input
-                        type='text'
-                        name='species'
-                        value={formData.species}
                         onChange={handleChange}
                         required
                     />
@@ -148,6 +142,7 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
                     <input
                         type='text'
                         name='image'
+                        value={formData.image}
                         placeholder='Ex: www.myimage.png'
                         onChange={handleChange}
                         required

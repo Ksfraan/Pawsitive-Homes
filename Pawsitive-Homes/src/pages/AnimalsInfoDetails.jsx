@@ -22,9 +22,8 @@ function AnimalsInfoDetails({ animals, setAnimals }) {
 
     const handleDeleteAnimal = async () => {
         try {
-            await api.deleteAnimal(id).then(() => {
-                setIsDeleted(true);
-            });
+            await api.deleteAnimal(id);
+            setIsDeleted(true);
         } catch (error) {
             console.error('Error deleting animal:', error);
         }
@@ -35,7 +34,7 @@ function AnimalsInfoDetails({ animals, setAnimals }) {
                 <div className='animals-details-page-wrapper'>
                     <div className='additional-information-and-button'>
                         <h1>Additional Information</h1>
-                        <Button onClick={handleDeleteAnimal}>
+                        <Button onClick={handleDeleteAnimal} color='Crimson'>
                             Delete Animal
                         </Button>
                     </div>
@@ -62,6 +61,10 @@ function AnimalsInfoDetails({ animals, setAnimals }) {
                             </p>
                             <p>
                                 <strong>Health:</strong> {details.health}
+                            </p>
+                            <p>
+                                <strong>Available for adoption:</strong>{' '}
+                                {details.available_for_adoption ? 'Yes' : 'No'}
                             </p>
                         </div>
                         <img src={details.image} alt={details.name} />

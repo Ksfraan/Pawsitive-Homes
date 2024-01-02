@@ -13,10 +13,6 @@ function DashboardPage({ animals }) {
                     alt='image of a dog, a cat and a parrot'
                     className='dashboard-animals-images'
                 />
-
-                <center>
-                    <h1>Animals for adoption</h1>
-                </center>
                 <AnimalList animals={animals} animalSpecies='All Species' />
             </div>
         </PageContainer>
@@ -26,7 +22,7 @@ function DashboardPage({ animals }) {
 DashboardPage.propTypes = {
     animals: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.number,
+            id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
             name: PropTypes.string,
             species: PropTypes.string,
             image: PropTypes.string,

@@ -38,6 +38,14 @@
 
 .animals-list {
     padding: 0 2em 2em 2em;
+    background-color: #e5f1e4;
+}
+
+.animals-list h1 {
+    text-transform: uppercase;
+    margin-top: 0;
+    padding-top: 1em;
+    color: #1e2761;
 }
 
 .animals-list h2 {
@@ -71,6 +79,11 @@
     width: 25em;
     object-fit: cover;
     margin: 1em;
+}
+
+.animals-list-add-button {
+    display: flex;
+    justify-content: flex-end;
 }
 
 /*@media only screen and (max-width: 600px) {

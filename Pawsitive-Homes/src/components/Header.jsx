@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom';
 import OrganizationName from '../assets/OrganizationName.png';
 import MainLogo from '../assets/MainLogo.png';
-import { Button } from '@mantine/core';
 import '../styles/Header.css';
+import ButtonWithLink from './ButtonWithLink';
 
 function Header() {
     return (
@@ -14,22 +13,8 @@ function Header() {
             />
             <div className='main-logo-buttons'>
                 <div className='signUp-Login-buttons'>
-                    <Button
-                        variant='filled'
-                        color='#408ec6'
-                        size='18'
-                        radius='md'
-                    >
-                        <Link to='/signup'>Sign Up</Link>
-                    </Button>
-                    <Button
-                        variant='filled'
-                        color='#408ec6'
-                        size='18'
-                        radius='md'
-                    >
-                        <Link to='/login'>Log In</Link>
-                    </Button>
+                    <ButtonWithLink to={'/signup'}> Sign Up</ButtonWithLink>
+                    <ButtonWithLink to={'/login'}> Log In</ButtonWithLink>
                 </div>
 
                 <img src={MainLogo} alt='Main Logo' className='main-logo' />

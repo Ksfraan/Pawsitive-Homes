@@ -1,34 +1,59 @@
 .about-page-wrapper {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     text-align: center;
+    border: 1px solid #1e2761;
+    margin: 2em;
+    background-color: #e5f1e4;
+    padding-bottom: 2em;
 }
 
-.about-page-wrapper h1 {
-    color: RGB(239, 71, 111);
-}
-
-.about-page-wrapper h2 {
-    color: RGB(255, 209, 102);
-}
-
-.about-page-wrapper h3 {
-    color: RGB(6, 214, 160);
-}
-
-.about-page-wrapper h4 {
-    color: RGB(255, 209, 102);
-}
-
-.about-page-wrapper h5 {
-    color: RGB(6, 214, 160);
+.about-page-wrapper h1,
+.about-page-wrapper h2,
+.about-page-wrapper h3,
+.about-page-wrapper h4,
+.about-page-wrapper h5,
+.about-page-wrapper strong {
+    margin: 0;
+    color: #1e2761;
 }
 
 .about-page-wrapper p {
-    color: rgb(0, 128, 113);
+    color: black;
+    width: 70%;
 }
 
-.about-page-wrapper strong {
-    color: RGB(255, 209, 102);
+.about-page-wrapper button {
+    width: 15em;
+}
+
+.about-pawsitive-homes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-pawsitive-homes img {
+    justify-content: center;
+    height: 25em;
+    width: 25em;
+    object-fit: contain;
+}
+
+.about-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1e2761;
+}
+
+.about-team-images-wrapper {
+    justify-content: center;
+    display: flex;
+    gap: 3em;
+    max-width: 100%;
+    height: 30em;
+    width: 25em;
+}
+
+.about-team-images-wrapper img {
+    height: 25em;
 }

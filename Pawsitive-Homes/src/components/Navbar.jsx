@@ -1,28 +1,18 @@
 import '../styles/Navbar.css';
-import { Button } from '@mantine/core';
-import { Link } from 'react-router-dom';
+import ButtonWithLink from './ButtonWithLink';
 
 function Navbar() {
-    const renderButtonLink = (to, children) => (
-        <Button
-            variant='filled'
-            color='#1e2761'
-            size='lg'
-            radius='md'
-            className='Home-Page-button'
-        >
-            <Link to={to}>{children}</Link>
-        </Button>
-    );
     return (
         <div className='navbar'>
             <div style={{ fontSize: '50px' }}>
                 <div className='navbar-buttons'>
-                    {renderButtonLink('/', 'Home Page')}
-                    {renderButtonLink('/dogs', 'Dogs')}
-                    {renderButtonLink('/cats', 'Cats')}
-                    {renderButtonLink('/other-animals', 'Other Animals')}
-                    {renderButtonLink('/add-animal', 'Add an animal')}
+                    <ButtonWithLink to={'/'}> Home Page</ButtonWithLink>
+                    <ButtonWithLink to={'/dogs'}> Dogs</ButtonWithLink>
+                    <ButtonWithLink to={'/cats'}> Cats</ButtonWithLink>
+                    <ButtonWithLink to={'/other-animals'}>
+                        Other Pets
+                    </ButtonWithLink>
+                    <ButtonWithLink to={'/about'}> About</ButtonWithLink>
                 </div>
             </div>
         </div>
