@@ -1,17 +1,12 @@
 import PropTypes from 'prop-types';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PageContainer from '../components/PageContainer';
 import ButtonWithLink from '../components/ButtonWithLink';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { AnimalListContext } from '../context/AnimalListContext';
 
 const AnimalList = ({ animalSpecies }) => {
-    const { animals, fetchAnimals } = useContext(AnimalListContext);
-    const location = useLocation();
-
-    useEffect(() => {
-        fetchAnimals();
-    }, [location, fetchAnimals]);
+    const { animals } = useContext(AnimalListContext);
 
     const animalData = animals?.filter((animal) => {
         switch (animalSpecies) {

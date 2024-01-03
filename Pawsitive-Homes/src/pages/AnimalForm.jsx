@@ -1,8 +1,9 @@
 import animalsApi from '../services/animalsApi';
 import { v4 as uuidv4 } from 'uuid';
 import { Button } from '@mantine/core';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import PageContainer from '../components/PageContainer';
+import { AnimalListContext } from '../context/AnimalListContext';
 import '../styles/AnimalForm.css';
 
 const initialFormData = {
@@ -20,6 +21,7 @@ const initialFormData = {
 };
 
 const AnimalForm = () => {
+    const { fetchAnimals } = useContext(AnimalListContext);
     const [formData, setFormData] = useState(initialFormData);
 
     const handleChange = (e) => {
@@ -38,6 +40,7 @@ const AnimalForm = () => {
         };
 
         animalsApi.addAnimal(formDataWithId).then(() => {
+            fetchAnimals();
             // reset formData
             setFormData(initialFormData);
         });

@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const ButtonWithLink = ({ to, children }) => (
-    <Button
-        variant='filled'
-        color='#1e2761'
-        size='lg'
-        radius='md'
-        className='home-Page-button'
-    >
-        <Link to={to}>{children}</Link>
-    </Button>
+    <Link to={to}>
+        <Button
+            variant='filled'
+            color='#1e2761'
+            size='lg'
+            radius='md'
+            className='home-Page-button'
+        >
+            {children}
+        </Button>
+    </Link>
 );
 
 ButtonWithLink.propTypes = {

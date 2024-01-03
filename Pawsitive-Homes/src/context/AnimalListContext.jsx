@@ -9,10 +9,9 @@ export const AnimalContextProvider = ({ children }) => {
 
     const fetchAnimals = async () => {
         try {
-            const response = animalsApi.getAnimals;
-            const animalsData = response.data;
-
-            setAnimals(animalsData);
+            animalsApi.getAnimals().then((response) => {
+                setAnimals([...response]);
+            });
         } catch (error) {
             console.error('Error fetching animals:', error);
         }

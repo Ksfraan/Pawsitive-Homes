@@ -4,7 +4,10 @@ const api = axios.create({
     baseURL: 'http://localhost:3001',
 });
 
-const getAnimals = await api.get('/animals');
+const getAnimals = async () => {
+    const response = await api.get('/animals');
+    return response.data;
+};
 
 const addAnimal = async (newAnimal) => {
     const response = await api.post('/animals', newAnimal);

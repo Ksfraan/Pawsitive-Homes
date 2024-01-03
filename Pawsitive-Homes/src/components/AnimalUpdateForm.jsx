@@ -1,9 +1,12 @@
 import animalsApi from '../services/animalsApi';
 import { Button } from '@mantine/core';
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { AnimalListContext } from '../context/AnimalListContext';
 
 const AnimalUpdateForm = ({ animal }) => {
+    const { fetchAnimals } = useContext(AnimalListContext);
+
     const [formData, setFormData] = useState({
         name: '',
         species: '',
@@ -43,7 +46,9 @@ const AnimalUpdateForm = ({ animal }) => {
         e.preventDefault();
 
         try {
-            animalsApi.updateAnimal(animal.id, formData);
+            animalsApi.updateAnimal(animal.id, formData).then(() => {
+                fetchAnimals();
+            });
         } catch (error) {
             console.error('Error updating animal:', error);
         }
@@ -171,7 +176,6 @@ const AnimalUpdateForm = ({ animal }) => {
 
 AnimalUpdateForm.propTypes = {
     animal: PropTypes.object.isRequired,
-    // onUpdate: PropTypes.func.isRequired,
 };
 
 export default AnimalUpdateForm;

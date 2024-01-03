@@ -1,27 +1,24 @@
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import PageContainer from '../components/PageContainer';
 import AnimalUpdateForm from '../components/AnimalUpdateForm';
 import api from '../services/animalsApi';
 import { Button } from '@mantine/core';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { AnimalListContext } from '../context/AnimalListContext';
 
 function AnimalsInfoDetails() {
     const { animals, fetchAnimals } = useContext(AnimalListContext);
     const [isDeleted, setIsDeleted] = useState(false);
     const { id } = useParams();
-    const location = useLocation();
-
-    useEffect(() => {
-        fetchAnimals();
-    }, [location]);
 
     const details = animals.find((animal) => String(animal.id) === String(id));
 
     const handleDeleteAnimal = async () => {
         try {
-            await api.deleteAnimal(id);
-            setIsDeleted(true);
+            api.deleteAnimal(id).then(() => {
+                fetchAnimals();
+                setIsDeleted(true);
+            });
         } catch (error) {
             console.error('Error deleting animal:', error);
         }
