@@ -1,10 +1,28 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import PageContainer from '../components/PageContainer';
 import ButtonWithLink from '../components/ButtonWithLink';
+import { useContext, useEffect } from 'react';
+import { AnimalListContext } from '../context/AnimalListContext';
 
-const AnimalList = ({ animals, animalSpecies }) => {
-    let title = animalSpecies;
+const AnimalList = ({ animalSpecies }) => {
+    const { animals, fetchAnimals } = useContext(AnimalListContext);
+    const location = useLocation();
+
+    useEffect(() => {
+        fetchAnimals();
+    }, [location, fetchAnimals]);
+
+    const animalData = animals?.filter((animal) => {
+        switch (animalSpecies) {
+            case 'Others':
+                return animal.species !== 'Cat' && animal.species !== 'Dog';
+            case 'All Species':
+                return animal;
+            default:
+                return animal.species === animalSpecies;
+        }
+    });
 
     return (
         <PageContainer>
@@ -18,11 +36,11 @@ const AnimalList = ({ animals, animalSpecies }) => {
                             Add Animal
                         </ButtonWithLink>
                     </div>
-                    <h2>{title}</h2>
+                    <h2>{animalSpecies}</h2>
 
-                    <ul>
-                        {animals
-                            ? animals?.map((animal) => (
+                    <ul className='animals-list-information'>
+                        {animalData
+                            ? animalData?.map((animal) => (
                                   <li key={animal.id}>
                                       <p>
                                           <strong>{`${animal.name}:`}</strong>{' '}
@@ -47,14 +65,6 @@ const AnimalList = ({ animals, animalSpecies }) => {
 };
 
 AnimalList.propTypes = {
-    animals: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-            name: PropTypes.string,
-            species: PropTypes.string,
-            image: PropTypes.string,
-        })
-    ),
     animalSpecies: PropTypes.string.isRequired,
 };
 

@@ -1,10 +1,9 @@
 import AnimalList from './AnimalList';
 import TopDashboard from '../assets/TopDashboard.png';
-import '../styles/DashboardPage.css';
-import PropTypes from 'prop-types';
 import PageContainer from '../components/PageContainer';
+import '../styles/DashboardPage.css';
 
-function DashboardPage({ animals }) {
+function DashboardPage() {
     return (
         <PageContainer>
             <div className='dashboard-page-wrapper'>
@@ -13,21 +12,10 @@ function DashboardPage({ animals }) {
                     alt='image of a dog, a cat and a parrot'
                     className='dashboard-animals-images'
                 />
-                <AnimalList animals={animals} animalSpecies='All Species' />
+                <AnimalList animalSpecies='All Species' />
             </div>
         </PageContainer>
     );
 }
-
-DashboardPage.propTypes = {
-    animals: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-            name: PropTypes.string,
-            species: PropTypes.string,
-            image: PropTypes.string,
-        })
-    ),
-};
 
 export default DashboardPage;

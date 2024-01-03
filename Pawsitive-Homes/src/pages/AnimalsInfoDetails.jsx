@@ -1,24 +1,22 @@
-import { useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { useLocation, useParams } from 'react-router-dom';
 import PageContainer from '../components/PageContainer';
 import AnimalUpdateForm from '../components/AnimalUpdateForm';
 import api from '../services/animalsApi';
 import { Button } from '@mantine/core';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AnimalListContext } from '../context/AnimalListContext';
 
-function AnimalsInfoDetails({ animals, setAnimals }) {
-    const { id } = useParams();
+function AnimalsInfoDetails() {
+    const { animals, fetchAnimals } = useContext(AnimalListContext);
     const [isDeleted, setIsDeleted] = useState(false);
+    const { id } = useParams();
+    const location = useLocation();
+
+    useEffect(() => {
+        fetchAnimals();
+    }, [location]);
 
     const details = animals.find((animal) => String(animal.id) === String(id));
-
-    const updateAnimalInState = (updatedAnimal) => {
-        setAnimals((prevAnimals) => {
-            return prevAnimals.map((animal) =>
-                animal.id === updatedAnimal.id ? updatedAnimal : animal
-            );
-        });
-    };
 
     const handleDeleteAnimal = async () => {
         try {
@@ -70,10 +68,7 @@ function AnimalsInfoDetails({ animals, setAnimals }) {
                         <img src={details.image} alt={details.name} />
                     </div>
                 </div>
-                <AnimalUpdateForm
-                    animal={details}
-                    onUpdate={updateAnimalInState}
-                />
+                <AnimalUpdateForm animal={details} />
             </>
         </PageContainer>
     ) : (
@@ -82,10 +77,5 @@ function AnimalsInfoDetails({ animals, setAnimals }) {
         </p>
     );
 }
-
-AnimalsInfoDetails.propTypes = {
-    animals: PropTypes.array.isRequired,
-    setAnimals: PropTypes.func.isRequired,
-};
 
 export default AnimalsInfoDetails;

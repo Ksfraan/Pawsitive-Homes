@@ -3,7 +3,7 @@ import { Button } from '@mantine/core';
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
-const AnimalUpdateForm = ({ animal, onUpdate }) => {
+const AnimalUpdateForm = ({ animal }) => {
     const [formData, setFormData] = useState({
         name: '',
         species: '',
@@ -43,11 +43,7 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
         e.preventDefault();
 
         try {
-            const updatedAnimal = await animalsApi.updateAnimal(
-                animal.id,
-                formData
-            );
-            onUpdate(updatedAnimal);
+            animalsApi.updateAnimal(animal.id, formData);
         } catch (error) {
             console.error('Error updating animal:', error);
         }
@@ -73,6 +69,16 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
                         type='text'
                         name='breed'
                         value={formData.breed}
+                        onChange={handleChange}
+                        required
+                    />
+                </label>
+                <label>
+                    Species:
+                    <input
+                        type='text'
+                        name='species'
+                        value={formData.species}
                         onChange={handleChange}
                         required
                     />
@@ -165,7 +171,7 @@ const AnimalUpdateForm = ({ animal, onUpdate }) => {
 
 AnimalUpdateForm.propTypes = {
     animal: PropTypes.object.isRequired,
-    onUpdate: PropTypes.func.isRequired,
+    // onUpdate: PropTypes.func.isRequired,
 };
 
 export default AnimalUpdateForm;
