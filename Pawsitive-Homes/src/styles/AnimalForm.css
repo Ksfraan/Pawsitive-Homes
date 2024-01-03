@@ -33,6 +33,7 @@
 }
 
 .form-description {
+    width: 15em;
     height: 3em;
     overflow: visible;
 }

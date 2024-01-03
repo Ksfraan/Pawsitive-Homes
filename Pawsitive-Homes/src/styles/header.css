@@ -81,6 +81,10 @@
     margin: 1em;
 }
 
+.animals-list-information p {
+    color: #1e2761;
+}
+
 .animals-list-add-button {
     display: flex;
     justify-content: flex-end;
