@@ -39,32 +39,50 @@ const AnimalList = ({ animalSpecies }) => {
 
                 <ul className='animals-list-information'>
                     {animalData
-                        ? animalData.map((animal) => (
-                              <Link to={`/animal/${animal.id}`} key={animal.id}>
-                                  <li className='animal-list-item'>
-                                      <p className='animal-info-text'>
-                                          <strong>{`${animal.name}:`}</strong>{' '}
-                                          {animal.species}
-                                          <br />
-                                          <span>{`${animal.age} year(s) old`}</span>
-                                      </p>
-                                      <div className='image-wrapper'>
-                                          {isMobile ? (
+                        ? animalData.map((animal) => {
+                              const yearOrMonth = String(animal.age).includes(
+                                  'months'
+                              )
+                                  ? 'month'
+                                  : 'year';
+                              const animalAge = String(animal.age).includes(
+                                  'month'
+                              )
+                                  ? animal.age.replace(' months', '')
+                                  : animal.age;
+
+                              return (
+                                  <Link
+                                      to={`/animal/${animal.id}`}
+                                      key={animal.id}
+                                  >
+                                      <li className='animal-list-item'>
+                                          <p className='animal-info-text'>
+                                              <strong>{`${animal.name}:`}</strong>{' '}
+                                              {animal.species}
+                                              <br />
+                                              <span>{`${animalAge} ${yearOrMonth}(s) old`}</span>
+                                          </p>
+                                          <div className='image-wrapper'>
+                                              {isMobile ? (
+                                                  <img
+                                                      className='touch-mobile-symbol'
+                                                      src={TouchSymbol}
+                                                      alt={
+                                                          'Touch Screen Symbol'
+                                                      }
+                                                  />
+                                              ) : null}
                                               <img
-                                                  className='touch-mobile-symbol'
-                                                  src={TouchSymbol}
-                                                  alt={'Touch Screen Symbol'}
+                                                  className='animal-image'
+                                                  src={animal.image}
+                                                  alt={animal.name}
                                               />
-                                          ) : null}
-                                          <img
-                                              className='animal-image'
-                                              src={animal.image}
-                                              alt={animal.name}
-                                          />
-                                      </div>
-                                  </li>
-                              </Link>
-                          ))
+                                          </div>
+                                      </li>
+                                  </Link>
+                              );
+                          })
                         : null}
                 </ul>
             </div>

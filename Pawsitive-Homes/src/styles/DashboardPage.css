@@ -21,9 +21,6 @@
 */
 
 /* @media only screen and (width > 1440px) {
-    #root {
-        width: 100vh;
-    }
     .dashboard-page-wrapper h1 {
         color: #1e2761;
         text-transform: uppercase;

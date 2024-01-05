@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import '../styles/PageContainer.css';
 
-function PageContainer({ children }) {
-    return <div>{children}</div>;
-}
+const PageContainer = ({ children }) => {
+    return <div className='page-container'>{children}</div>;
+};
 
 PageContainer.propTypes = {
     children: PropTypes.element.isRequired,
