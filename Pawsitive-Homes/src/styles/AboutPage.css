@@ -1,14 +1,12 @@
 .about-page-wrapper {
     text-align: center;
     border: 1px solid #1e2761;
-    margin: 2em;
+    margin: 2em 1em;
     background-color: #e5f1e4;
-    padding-bottom: 2em;
 }
 
 .about-page-wrapper h1,
 .about-page-wrapper h2,
-.about-page-wrapper h3,
 .about-page-wrapper h4,
 .about-page-wrapper h5,
 .about-page-wrapper strong {
@@ -18,7 +16,7 @@
 
 .about-page-wrapper p {
     color: black;
-    width: 70%;
+    text-align: justify;
 }
 
 .about-page-wrapper button {
@@ -29,31 +27,136 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 2em;
 }
 
-.about-pawsitive-homes img {
+.about-pawsitive-homes-images-wrapper {
+    display: flex;
+}
+
+.about-pawsitive-homes-images-wrapper {
     justify-content: center;
-    height: 25em;
-    width: 25em;
+    object-fit: contain;
+}
+
+.cat-gif {
+    height: 6em;
+    object-fit: contain;
+}
+
+.running-dog-gif {
+    height: 4em;
     object-fit: contain;
 }
 
 .about-team {
+    padding: 0 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #1e2761;
+    background-color: #b2cdb0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.about-team h1 {
+    padding: 1em 0;
 }
 
 .about-team-images-wrapper {
     justify-content: center;
     display: flex;
-    gap: 3em;
-    max-width: 100%;
-    height: 30em;
+    margin-bottom: 2em;
+    gap: 1em;
+    height: 12em;
     width: 25em;
 }
 
 .about-team-images-wrapper img {
-    height: 25em;
+    height: 100%;
+    border-radius: 1em;
+    border: 1px solid black;
 }
+
+.moto {
+    padding: 1em;
+    margin-bottom: 1em;
+    color: white;
+    background-color: #1e2761;
+    border-radius: 0.5em;
+}
+
+.back-home-button-container {
+    padding: 2em;
+}
+
+/* @media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+/*@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    
+}
+*/
+
+/* @media only screen and (width > 1440px) {
+    .about-page-wrapper {
+        text-align: center;
+        border: 1px solid #1e2761;
+        margin: 2em;
+        background-color: #e5f1e4;
+        padding-bottom: 2em;
+    }
+
+    .about-page-wrapper h1,
+    .about-page-wrapper h2,
+    .about-page-wrapper h3,
+    .about-page-wrapper h4,
+    .about-page-wrapper h5,
+    .about-page-wrapper strong {
+        margin: 0;
+        color: #1e2761;
+    }
+
+    .about-page-wrapper p {
+        color: black;
+        width: 70%;
+    }
+
+    .about-page-wrapper button {
+        width: 15em;
+    }
+
+    .about-pawsitive-homes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-pawsitive-homes img {
+        justify-content: center;
+        height: 25em;
+        width: 25em;
+        object-fit: contain;
+    }
+
+    .about-team {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #1e2761;
+    }
+
+    .about-team-images-wrapper {
+        justify-content: center;
+        display: flex;
+        gap: 3em;
+        max-width: 100%;
+        height: 30em;
+        width: 25em;
+    }
+
+    .about-team-images-wrapper img {
+        height: 25em;
+    }
+} */

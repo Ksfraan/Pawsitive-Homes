@@ -1,8 +1,8 @@
 import animalsApi from '../services/animalsApi';
-import { Button } from '@mantine/core';
 import PropTypes from 'prop-types';
 import { useState, useEffect, useContext } from 'react';
 import { AnimalListContext } from '../context/AnimalListContext';
+import ButtonStyled from './ButtonStyled';
 
 const AnimalUpdateForm = ({ animal }) => {
     const { fetchAnimals } = useContext(AnimalListContext);
@@ -160,15 +160,7 @@ const AnimalUpdateForm = ({ animal }) => {
                     />
                 </label>
 
-                <Button
-                    type='submit'
-                    variant='filled'
-                    color='#1e2761'
-                    size='lg'
-                    radius='md'
-                >
-                    Update Animal
-                </Button>
+                <ButtonStyled type='submit'>Update Animal</ButtonStyled>
             </form>
         </div>
     );

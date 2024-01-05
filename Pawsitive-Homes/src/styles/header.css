@@ -2,6 +2,7 @@
     background-color: #1e2761;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     padding: 1.5em;
 }
@@ -10,97 +11,73 @@
     color: white;
 }
 
-.header img {
-    margin-top: 1em;
+.logos-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.letter-logo-container {
+    width: 15em;
+}
+
+.main-logo-container {
+    width: 4em;
 }
 
 .main-logo {
-    width: 10em;
+    width: 100%;
 }
 
 .organization-name {
-    width: 30em;
+    width: 100%;
 }
 
 .signUp-Login-buttons a {
     font-size: small;
 }
 
-.main-logo-buttons {
-    display: flex;
-    flex-direction: column;
-}
-
 .signUp-Login-buttons {
-    display: flex;
-    justify-content: space-around;
-}
-
-.animals-list {
-    padding: 0 2em 2em 2em;
-    background-color: #e5f1e4;
-}
-
-.animals-list h1 {
-    text-transform: uppercase;
-    margin-top: 0;
-    padding-top: 1em;
-    color: #1e2761;
-}
-
-.animals-list h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #408ec6;
-}
-
-.animals-list ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
-    grid-gap: 1em;
-}
-
-.animals-list li {
-    border: 1px solid #408ec6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.animals-list img {
-    justify-content: center;
-    max-width: 100%;
-    height: 25em;
-    width: 25em;
-    object-fit: cover;
-    margin: 1em;
-}
-
-.animals-list-information p {
-    color: #1e2761;
-}
-
-.animals-list-add-button {
+    width: 100%;
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 1em;
+    gap: 1em;
 }
 
-/*@media only screen and (max-width: 600px) {
-  
-}
+/* @media screen and (min-width: 768px) and (max-width: 1024px) {
+} */
 
-
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-  
-}
-
-
-@media only screen and (min-width: 1025px) {
-  
+/*@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    
 }
 */
+
+/* @media only screen and (min-width: 1441px) {
+    .header {
+    flex-direction: row;
+        background-color: #1e2761;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5em;
+    }
+
+    .header a {
+        color: white;
+    }
+
+    .header img {
+        margin-top: 1em;
+    }
+
+    .main-logo {
+        width: 10em;
+    }
+
+    .main-logo-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+} */

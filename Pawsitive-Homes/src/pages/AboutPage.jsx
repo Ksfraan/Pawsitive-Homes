@@ -3,21 +3,9 @@ import PageContainer from '../components/PageContainer';
 import '../styles/AboutPage.css';
 import Carina from '../assets/CarinaPhoto.jpeg';
 import Miguel from '../assets/MiguelPhoto.jpeg';
-import { Link } from 'react-router-dom';
-import { Button } from '@mantine/core';
+import ButtonWithLink from '../components/ButtonWithLink';
 
 function AboutPage() {
-    const renderButtonLink = (to, children) => (
-        <Button
-            variant='filled'
-            color='#1e2761'
-            size='lg'
-            radius='md'
-            className='home-Page-button'
-        >
-            <Link to={to}>{children}</Link>
-        </Button>
-    );
     return (
         <PageContainer>
             <div className='about-page-wrapper'>
@@ -25,33 +13,44 @@ function AboutPage() {
                     <h1>About Pawsitive Homes 🐾</h1>
                     <p>
                         Pawsitive Homes is an online, searchable database of
-                        animals who need homes At Pawsitive Homes, we believe
-                        that each animal has a unique story and deserves a home
-                        filled with love and care. We are more than just an
-                        animal adoption application; we are a refuge of hope and
-                        joy for our furry friends. Our mission is to transform
-                        lives, one paw at a time. While browsing through our
-                        application, you're not just searching for a new family
-                        best friend; you're embarking on a journey filled with
-                        barks, purrs, and unforgettable moments.
+                        animals who need homes. <br />
+                        <br /> At Pawsitive Homes, we believe that each animal
+                        has a unique story and deserves a home filled with love
+                        and care. We are more than just an animal adoption
+                        application.
+                        <br />
+                        <br /> We are a refuge of hope and joy for our furry
+                        friends. Our mission is to transform lives, one paw at a
+                        time.
+                        <br /> <br />
+                        While browsing through our application, you're not just
+                        searching for a new family best friend.
+                        <br />
+                        <br /> You're embarking on a journey filled with barks,
+                        purrs, and unforgettable moments.
                     </p>
                     <div className='about-pawsitive-homes-images-wrapper'>
                         <img
+                            className='cat-gif'
                             src='https://i.gifer.com/nVK.gif'
                             alt='gif of a cat wagging its paws'
                         />
                         <img
+                            className='running-dog-gif'
                             src='https://i.gifer.com/nTw.gif'
                             alt='gif of a dog jumping'
                         />
                     </div>
 
-                    <h3>Be part of the change. Adopt. Love. Smile.</h3>
+                    <h3 className='moto'>
+                        Be part of the change. Adopt. Love. Smile.
+                    </h3>
                     <strong>
                         Pawsitively Yours, The Pawsitive Homes Team 🐾
                     </strong>
                     <br />
                 </div>
+
                 <div className='about-team'>
                     <h1>About our team</h1>
                     <div className='about-team-images-wrapper'>
@@ -75,7 +74,8 @@ function AboutPage() {
                         sprint, Miguel is the beacon of stability in our ocean
                         of online meetings.
                     </p>{' '}
-                    <h4>What do we do?</h4> <h5>Carina:</h5>{' '}
+                    <h4>What do we do?</h4>
+                    <h5>Carina:</h5>{' '}
                     <p>
                         Specialist in solving bugs while balancing a cup of
                         coffee. If she can't solve a problem, it's because the
@@ -88,7 +88,8 @@ function AboutPage() {
                         virtual motto: Programming with coffee, laughing
                         heartily (even if it's through a laughing emoji).{' '}
                     </p>{' '}
-                    <h4>Remote curiosities:</h4> <h5>Carina:</h5>{' '}
+                    <h4>Curiosities:</h4>
+                    <h5>Carina:</h5>{' '}
                     <p>
                         Can recite the Wi-Fi password of any café in town but
                         forgets their own name during video conferences. Firmly
@@ -105,7 +106,9 @@ function AboutPage() {
                         the comfort of an ever-growing slipper collection.
                     </p>
                 </div>
-                {renderButtonLink('/', 'Go to homepage')}
+                <div className='back-home-button-container'>
+                    <ButtonWithLink to='/'>Go Home</ButtonWithLink>
+                </div>
             </div>
         </PageContainer>
     );

@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import PageContainer from '../components/PageContainer';
 import ButtonWithLink from '../components/ButtonWithLink';
 import { useContext } from 'react';
+import PlusSign from '../assets/plus-sign.png';
+import TouchSymbol from '../assets/touch-screen-symbol.png';
 import { AnimalListContext } from '../context/AnimalListContext';
+import { ViewportSizeContext } from '../context/ViewportSizeContext';
+import '../styles/AnimalList.css';
 
 const AnimalList = ({ animalSpecies }) => {
     const { animals } = useContext(AnimalListContext);
+    const { isMobile } = useContext(ViewportSizeContext);
 
     const animalData = animals?.filter((animal) => {
         switch (animalSpecies) {
@@ -20,42 +24,51 @@ const AnimalList = ({ animalSpecies }) => {
     });
 
     return (
-        <PageContainer>
-            <>
-                <div className='animals-list'>
-                    <center>
-                        <h1>Animals for adoption</h1>
-                    </center>
-                    <div className='animals-list-add-button'>
-                        <ButtonWithLink to={'/add-animal'}>
-                            Add Animal
-                        </ButtonWithLink>
-                    </div>
-                    <h2>{animalSpecies}</h2>
+        <>
+            <div className='animals-list'>
+                <center>
+                    <h1>Animals for adoption</h1>
+                </center>
+                <div className='animals-list-add-button'>
+                    <ButtonWithLink to={'/add-animal'}>
+                        <img className='plus-sign' src={PlusSign} alt='' />
+                        <span>Add Animal</span>
+                    </ButtonWithLink>
+                </div>
+                <h2>{animalSpecies}</h2>
 
-                    <ul className='animals-list-information'>
-                        {animalData
-                            ? animalData?.map((animal) => (
-                                  <li key={animal.id}>
-                                      <p>
+                <ul className='animals-list-information'>
+                    {animalData
+                        ? animalData.map((animal) => (
+                              <Link to={`/animal/${animal.id}`} key={animal.id}>
+                                  <li className='animal-list-item'>
+                                      <p className='animal-info-text'>
                                           <strong>{`${animal.name}:`}</strong>{' '}
-                                          {animal.species} {'-'}{' '}
-                                          <strong>age: </strong>
-                                          {`${animal.age} year(s) old`}
+                                          {animal.species}
+                                          <br />
+                                          <span>{`${animal.age} year(s) old`}</span>
                                       </p>
-                                      <Link to={`/animal/${animal.id}`}>
+                                      <div className='image-wrapper'>
+                                          {isMobile ? (
+                                              <img
+                                                  className='touch-mobile-symbol'
+                                                  src={TouchSymbol}
+                                                  alt={'Touch Screen Symbol'}
+                                              />
+                                          ) : null}
                                           <img
+                                              className='animal-image'
                                               src={animal.image}
                                               alt={animal.name}
                                           />
-                                      </Link>
+                                      </div>
                                   </li>
-                              ))
-                            : null}
-                    </ul>
-                </div>
-            </>
-        </PageContainer>
+                              </Link>
+                          ))
+                        : null}
+                </ul>
+            </div>
+        </>
     );
 };
 

@@ -1,24 +1,20 @@
-import { Button } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import ButtonStyled from './ButtonStyled';
 
-const ButtonWithLink = ({ to, children }) => (
+const ButtonWithLink = ({ to, colorOverride, children }) => (
     <Link to={to}>
-        <Button
-            variant='filled'
-            color='#1e2761'
-            size='lg'
-            radius='md'
-            className='home-Page-button'
-        >
-            {children}
-        </Button>
+        <ButtonStyled colorOverride={colorOverride}>{children}</ButtonStyled>
     </Link>
 );
 
 ButtonWithLink.propTypes = {
     to: PropTypes.string.isRequired,
-    children: PropTypes.string.isRequired,
+    children: PropTypes.oneOfType([
+        PropTypes.string.isRequired,
+        PropTypes.array.isRequired,
+    ]),
+    colorOverride: PropTypes.string,
 };
 
 export default ButtonWithLink;

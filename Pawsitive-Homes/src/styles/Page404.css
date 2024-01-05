@@ -1,16 +1,45 @@
-.notFound {
-    background-color: #0b0b0b;
-    padding-bottom: 2em;
-    text-align: center;
+@media screen and (max-width: 767px) {
+    .notFound {
+        background-color: #0b0b0b;
+        padding-bottom: 2em;
+        text-align: center;
+    }
+
+    .notFound img {
+        max-width: 1200px;
+        margin: 0%;
+        padding: auto 5%;
+    }
+
+    .notFound h2 {
+        color: white;
+        background-color: #0b0b0b;
+    }
 }
 
-.notFound img {
-    max-width: 1200px;
-    margin: 0%;
-    padding: auto 5%;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 }
 
-.notFound h2 {
-    color: white;
-    background-color: #0b0b0b;
+/*@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    
 }
+*/
+
+/* @media only screen and (width > 1440px) {
+    .notFound {
+        background-color: #0b0b0b;
+        padding-bottom: 2em;
+        text-align: center;
+    }
+
+    .notFound img {
+        max-width: 1200px;
+        margin: 0%;
+        padding: auto 5%;
+    }
+
+    .notFound h2 {
+        color: white;
+        background-color: #0b0b0b;
+    }
+} */

@@ -1,10 +1,10 @@
 import animalsApi from '../services/animalsApi';
 import { v4 as uuidv4 } from 'uuid';
-import { Button } from '@mantine/core';
 import { useState, useContext } from 'react';
 import PageContainer from '../components/PageContainer';
 import { AnimalListContext } from '../context/AnimalListContext';
 import '../styles/AnimalForm.css';
+import ButtonStyled from '../components/ButtonStyled';
 
 const initialFormData = {
     id: '',
@@ -127,15 +127,7 @@ const AnimalForm = () => {
                         </select>
                     </label>
 
-                    <Button
-                        type='submit'
-                        variant='filled'
-                        color='#1e2761'
-                        size='lg'
-                        radius='md'
-                    >
-                        Add Animal
-                    </Button>
+                    <ButtonStyled type='submit'>Add Animal</ButtonStyled>
                 </form>
             </div>
         </PageContainer>

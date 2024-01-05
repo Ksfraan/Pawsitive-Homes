@@ -5,9 +5,36 @@
 }
 
 .dashboard-animals-images {
-    width: 100vw;
+    width: 100%;
 }
 
 .dashboard-page-wrapper {
     background-color: #e5f1e4;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+/*@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    
+}
+*/
+
+/* @media only screen and (width > 1440px) {
+    #root {
+        width: 100vh;
+    }
+    .dashboard-page-wrapper h1 {
+        color: #1e2761;
+        text-transform: uppercase;
+        justify-items: center;
+    }
+
+    .dashboard-animals-images {
+        width: 100vw;
+    }
+
+    .dashboard-page-wrapper {
+        background-color: #e5f1e4;
+    }
+} */

@@ -2,9 +2,9 @@ import { useParams } from 'react-router-dom';
 import PageContainer from '../components/PageContainer';
 import AnimalUpdateForm from '../components/AnimalUpdateForm';
 import api from '../services/animalsApi';
-import { Button } from '@mantine/core';
 import { useContext, useState } from 'react';
 import { AnimalListContext } from '../context/AnimalListContext';
+import ButtonStyled from '../components/ButtonStyled';
 
 function AnimalsInfoDetails() {
     const { animals, fetchAnimals } = useContext(AnimalListContext);
@@ -29,9 +29,9 @@ function AnimalsInfoDetails() {
                 <div className='animals-details-page-wrapper'>
                     <div className='additional-information-and-button'>
                         <h1>Additional Information</h1>
-                        <Button onClick={handleDeleteAnimal} color='Crimson'>
+                        <ButtonStyled onClick={handleDeleteAnimal}>
                             Delete Animal
-                        </Button>
+                        </ButtonStyled>
                     </div>
                     <div className='animal-details-with-image'>
                         <div className='animal-details-without-image'>
