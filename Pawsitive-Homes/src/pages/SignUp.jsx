@@ -26,6 +26,8 @@ function SignUp() {
                     <img src={xIcon} alt='x icon' />
                     <img src={appleIcon} alt='apple icon' />
                 </div>
+                {action === 'Welcome Back!' ? <div className='signOption'>or use your email account</div> : 
+                <div className='signOption'>or use your email for registration</div>}
                 <div className='inputs'>
                     {action === 'Welcome Back!' ? <div></div> : <div className="input">
                         <img src={userIcon} alt="user" />

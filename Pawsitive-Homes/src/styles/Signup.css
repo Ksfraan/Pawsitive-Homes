@@ -6,6 +6,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
     margin: auto;
     margin-top: 5%;
     width: 70%;
@@ -45,9 +46,15 @@ body {
 }
 
 .authenticator img { 
-    width: 5%;
+    width: 7%;
     padding: 1em;
     cursor: pointer;
+}
+
+.signOption  {
+    color: #8F8F8F;
+    font-size: 18px;   
+    margin: 2%; 
 }
 
 .inputs {    
@@ -81,8 +88,7 @@ body {
 }
 
 .forgotPassword {
-    padding-left: 62px;
-    margin-top: 27px;
+    margin: 2%;
     color: #408ec6;
     font-size: 18px;
     cursor: pointer;
