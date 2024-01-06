@@ -91,9 +91,10 @@ const AnimalUpdateForm = ({ animal }) => {
                 <label>
                     Age:
                     <input
-                        type='number'
+                        type='text'
                         name='age'
                         value={formData.age}
+                        placeholder='Ex: 8 Months'
                         onChange={handleChange}
                         required
                     />

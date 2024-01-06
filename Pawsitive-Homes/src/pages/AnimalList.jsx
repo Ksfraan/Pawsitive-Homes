@@ -6,6 +6,7 @@ import PlusSign from '../assets/plus-sign.png';
 import TouchSymbol from '../assets/touch-screen-symbol.png';
 import { AnimalListContext } from '../context/AnimalListContext';
 import { ViewportSizeContext } from '../context/ViewportSizeContext';
+import { animalAgeConverter } from '../utils/AnimalAgeConverter';
 import '../styles/AnimalList.css';
 
 const AnimalList = ({ animalSpecies }) => {
@@ -40,16 +41,7 @@ const AnimalList = ({ animalSpecies }) => {
                 <ul className='animals-list-information'>
                     {animalData
                         ? animalData.map((animal) => {
-                              const yearOrMonth = String(animal.age).includes(
-                                  'months'
-                              )
-                                  ? 'month'
-                                  : 'year';
-                              const animalAge = String(animal.age).includes(
-                                  'month'
-                              )
-                                  ? animal.age.replace(' months', '')
-                                  : animal.age;
+                              const animalAge = animalAgeConverter(animal.age);
 
                               return (
                                   <Link
@@ -61,7 +53,7 @@ const AnimalList = ({ animalSpecies }) => {
                                               <strong>{`${animal.name}:`}</strong>{' '}
                                               {animal.species}
                                               <br />
-                                              <span>{`${animalAge} ${yearOrMonth}(s) old`}</span>
+                                              <span>{`${animalAge}(s) old`}</span>
                                           </p>
                                           <div className='image-wrapper'>
                                               {isMobile ? (

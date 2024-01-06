@@ -5,6 +5,7 @@ import api from '../services/animalsApi';
 import { useContext, useState } from 'react';
 import { AnimalListContext } from '../context/AnimalListContext';
 import ButtonStyled from '../components/ButtonStyled';
+import { animalAgeConverter } from '../utils/AnimalAgeConverter';
 
 function AnimalsInfoDetails() {
     const { animals, fetchAnimals } = useContext(AnimalListContext);
@@ -23,13 +24,17 @@ function AnimalsInfoDetails() {
             console.error('Error deleting animal:', error);
         }
     };
+
     return details && !isDeleted ? (
         <PageContainer>
             <>
                 <div className='animals-details-page-wrapper'>
                     <div className='additional-information-and-button'>
                         <h1>Additional Information</h1>
-                        <ButtonStyled onClick={handleDeleteAnimal}>
+                        <ButtonStyled
+                            onClick={handleDeleteAnimal}
+                            colorOverride={'Crimson'}
+                        >
                             Delete Animal
                         </ButtonStyled>
                     </div>
@@ -42,7 +47,8 @@ function AnimalsInfoDetails() {
                                 <strong>Breed:</strong> {details.breed}
                             </p>
                             <p>
-                                <strong>Age:</strong> {details.age}
+                                <strong>Age:</strong>{' '}
+                                {`${animalAgeConverter(details.age)}(s) old`}
                             </p>
                             <p>
                                 <strong>Gender:</strong> {details.gender}
