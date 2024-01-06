@@ -4,7 +4,10 @@ import '../styles/Signup.css';
 import userIcon from '../assets/person.png';
 import emailIcon from '../assets/email.png';
 import passwordIcon from '../assets/password.png';
-
+import googleIcon from '../assets/google.png'
+import facebookIcon from '../assets/facebook.png'
+import xIcon from '../assets/x.png'
+import appleIcon from '../assets/apple.png'
 
 function SignUp() {
 
@@ -17,25 +20,34 @@ function SignUp() {
                     <div className='text'>{action}</div>
                     <div className='underline'></div>
                 </div>
+                <div className='authenticator'>
+                    <img src={googleIcon} alt='google icon' />
+                    <img src={facebookIcon} alt='facebook icon' />
+                    <img src={xIcon} alt='x icon' />
+                    <img src={appleIcon} alt='apple icon' />
+                </div>
                 <div className='inputs'>
-                    <div className="input">
+                    {action === 'Welcome Back!' ? <div></div> : <div className="input">
                         <img src={userIcon} alt="user" />
                         <input type="text" placeholder='Name' />
-                    </div>
+                    </div>}                    
                     <div className="input">
                         <img src={emailIcon} alt="email" />
                         <input type="email" placeholder='Email' />
                     </div>
                     <div className="input">
                         <img src={passwordIcon} alt="password" />
-                        <input type="password" placeholder='Create password' />
+                        <input type="password" 
+                        placeholder={action === 'Welcome Back!' ? 'Password' : 'Create password'} />
                     </div>
-                    <div className="input">
+                    {action === 'Welcome Back!' ? <div></div> : <div className="input">
                         <img src={passwordIcon} alt="password" />
                         <input type="password" placeholder='Confirm password' />
-                    </div>
+                    </div>}
+                    
                 </div> 
-                <div className="forgotPassword">Forgot password?</div>   
+                {action === 'Create account' ? <div></div> : 
+                <div className="forgotPassword">Forgot password?</div>}                   
                 <div className="submitContainer">
                     <div className={action === 'Welcome Back!' ? 'submit gray' : 'submit'} 
                     onClick={() => {setAction('Create account')}}>Sign Up</div>

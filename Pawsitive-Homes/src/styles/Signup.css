@@ -37,8 +37,20 @@ body {
     border-radius: 9px;
 }
 
-.inputs {
+.authenticator {
     margin-top: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.authenticator img { 
+    width: 5%;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.inputs {    
     display: flex;
     flex-direction: column;
     gap: 25px;
