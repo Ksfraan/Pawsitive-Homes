@@ -14,7 +14,7 @@ function SignUp() {
         <PageContainer>
             <div className='container'>
                 <div className='top'>
-                    <div className='text'>Create account</div>
+                    <div className='text'>Create account!</div>
                     <div className='underline'></div>
                 </div>
                 <div className='authenticator'>
@@ -23,8 +23,10 @@ function SignUp() {
                     <img src={xIcon} alt='x icon' />
                     <img src={appleIcon} alt='apple icon' />
                 </div>
-                <div className='signOption'>
-                    Use your best email for registration
+                <div className='divider-wrapper'>
+                    <div className='divider-container'>
+                        <h5 className='divider'>Or</h5>
+                    </div>
                 </div>
                 <div className='inputs'>
                     <div className='input'>
@@ -49,13 +51,8 @@ function SignUp() {
                         Sign Up
                     </button>
                 </div>
-                <div className='divider-wrapper'>
-                    <div className='divider-container'>
-                        <h5 className='divider'>Or</h5>
-                    </div>
-                </div>
                 <div className='create-account-link'>
-                    <Link to='/login'>Login</Link>
+                    <p>Already have an account? <Link to='/login'>Login</Link></p>                    
                 </div>
             </div>
         </PageContainer>

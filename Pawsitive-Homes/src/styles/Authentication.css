@@ -5,7 +5,7 @@
     margin-top: 2em;
     justify-content: center;
     width: 70%;
-    max-width: 620px;
+    max-width: 450px;
     background: #fff;
     padding-bottom: 0;
     border-radius: 10px;
@@ -41,7 +41,7 @@
 }
 
 .authenticator img {
-    width: 10%;
+    width: 8%;
     padding: 0.5em 0.5em;
     cursor: pointer;
 }
@@ -66,6 +66,7 @@
     align-items: center;
     margin: auto;
     width: 100%;
+    max-width: 410px;
     height: 3em;
     background: #e5f1e4;
     border-radius: 9px;

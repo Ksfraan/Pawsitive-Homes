@@ -22,7 +22,11 @@ function LogIn() {
                     <img src={xIcon} alt='x icon' />
                     <img src={appleIcon} alt='apple icon' />
                 </div>
-                <p className='signOption'>Use your email to login</p>
+                <div className='divider-wrapper'>
+                    <div className='divider-container'>
+                        <h5 className='divider'>Or</h5>
+                    </div>
+                </div>
                 <div className='inputs'>
                     <div className='input'>
                         <img src={emailIcon} alt='email' />
@@ -39,13 +43,8 @@ function LogIn() {
                         Login
                     </button>
                 </div>
-                <div className='divider-wrapper'>
-                    <div className='divider-container'>
-                        <h5 className='divider'>Or</h5>
-                    </div>
-                </div>
                 <div className='create-account-link'>
-                    <Link to='/signup'>Create Account</Link>
+                    <p>Don't have an account? <Link to='/signup'>Signup</Link></p>
                 </div>
             </div>
         </PageContainer>
