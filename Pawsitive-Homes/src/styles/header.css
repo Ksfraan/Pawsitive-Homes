@@ -41,18 +41,6 @@
     width: 100%;
 }
 
-.signUp-Login-buttons a {
-    font-size: small;
-}
-
-.signUp-Login-buttons {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1em;
-    gap: 1em;
-}
-
 .account-icon {
     height: 2em;
 }
@@ -61,37 +49,13 @@
     .header {
         padding: 1.5em;
     }
+
+    .organization-name {
+        width: 25em;
+    }
 }
 
 /*@media only screen and (min-width: 1024px) and (max-width: 1440px) {
     
 }
 */
-
-/* @media only screen and (min-width: 1441px) {
-    .header {
-    flex-direction: row;
-        background-color: #1e2761;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5em;
-    }
-
-    .header a {
-        color: white;
-    }
-
-    .header img {
-        margin-top: 1em;
-    }
-
-    .main-logo {
-        width: 10em;
-    }
-
-    .main-logo-buttons {
-        display: flex;
-        flex-direction: column;
-    }
-} */

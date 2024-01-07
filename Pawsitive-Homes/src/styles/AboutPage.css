@@ -88,75 +88,24 @@
 }
 
 .back-home-button-container {
-    padding: 2em;
+    padding: 1em;
 }
 
-/* @media screen and (min-width: 768px) and (max-width: 1024px) {
-}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .about-page-wrapper {
+        margin: 2em;
+        border-radius: 1em;
+    }
 
+    .about-page-wrapper h1 {
+        padding-top: 1em;
+    }
+
+    .moto {
+        color: cadetblue;
+    }
+}
 /*@media only screen and (min-width: 1024px) and (max-width: 1440px) {
     
 }
 */
-
-/* @media only screen and (width > 1440px) {
-    .about-page-wrapper {
-        text-align: center;
-        border: 1px solid #1e2761;
-        margin: 2em;
-        background-color: #e5f1e4;
-        padding-bottom: 2em;
-    }
-
-    .about-page-wrapper h1,
-    .about-page-wrapper h2,
-    .about-page-wrapper h3,
-    .about-page-wrapper h4,
-    .about-page-wrapper h5,
-    .about-page-wrapper strong {
-        margin: 0;
-        color: #1e2761;
-    }
-
-    .about-page-wrapper p {
-        color: black;
-        width: 70%;
-    }
-
-    .about-page-wrapper button {
-        width: 15em;
-    }
-
-    .about-pawsitive-homes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-pawsitive-homes img {
-        justify-content: center;
-        height: 25em;
-        width: 25em;
-        object-fit: contain;
-    }
-
-    .about-team {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #1e2761;
-    }
-
-    .about-team-images-wrapper {
-        justify-content: center;
-        display: flex;
-        gap: 3em;
-        max-width: 100%;
-        height: 30em;
-        width: 25em;
-    }
-
-    .about-team-images-wrapper img {
-        height: 25em;
-    }
-} */

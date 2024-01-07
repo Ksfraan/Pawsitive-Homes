@@ -1,0 +1,199 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 2em;
+    justify-content: center;
+    width: 70%;
+    background: #fff;
+    padding-bottom: 0;
+    border-radius: 10px;
+    position: relative;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3em;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.text {
+    color: #1e2761;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.underline {
+    width: 25%;
+    height: 6px;
+    background: #1e2761;
+    border-radius: 9px;
+}
+
+.authenticator {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.authenticator img {
+    width: 7%;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.signOption {
+    text-align: center;
+    color: #8f8f8f;
+    font-size: 0.9em;
+    margin: 2%;
+}
+
+.inputs {
+    width: 90%;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    height: 3em;
+    background: #e5f1e4;
+    border-radius: 9px;
+}
+
+.input img {
+    margin: 0px 10%;
+}
+
+.input input {
+    height: 50px;
+    width: 50%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #8f8f8f;
+}
+
+.forgotPassword {
+    text-align: center;
+    margin-bottom: 1em;
+    color: #408ec6;
+}
+
+.submitContainer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1em;
+}
+
+.submit {
+    height: 2em;
+    color: #fff;
+    background: #1e2761;
+    border-radius: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.gray {
+    background: #eaeaea;
+    color: #8f8f8f;
+}
+
+.divider {
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    padding: 0 1em;
+    line-height: 1;
+}
+
+.divider-wrapper {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.divider-container {
+    position: relative;
+}
+
+.divider-wrapper::after {
+    content: '';
+    width: 80%;
+    background-color: transparent;
+    display: block;
+    height: 1px;
+    border-top: 1px solid #b1b1b1;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    z-index: 1;
+}
+
+.create-account-link {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0 2em;
+}
+
+.create-account-link a {
+    color: #408ec6;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .inputs {
+        margin: 0;
+        width: 100%;
+    }
+
+    .input {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        width: 80%;
+        height: 60px;
+        background: #e5f1e4;
+        border-radius: 9px;
+    }
+
+    .input img {
+        margin: 0px 10%;
+    }
+
+    .input input {
+        height: 50px;
+        width: 50%;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #8f8f8f;
+        font-size: 1rem;
+    }
+
+    .signOption {
+        font-size: 1.5em;
+    }
+
+    .submitContainer {
+        padding: 2em;
+    }
+
+    .submit {
+        display: flex;
+        align-items: center;
+        padding: 1.2em;
+    }
+}

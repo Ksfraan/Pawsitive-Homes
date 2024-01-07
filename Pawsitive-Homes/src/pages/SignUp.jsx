@@ -1,23 +1,20 @@
 import PageContainer from '../components/PageContainer';
-import { useState } from 'react';
-import '../styles/Signup.css';
+import '../styles/Authentication.css';
 import userIcon from '../assets/person.png';
 import emailIcon from '../assets/email.png';
 import passwordIcon from '../assets/password.png';
-import googleIcon from '../assets/google.png'
-import facebookIcon from '../assets/facebook.png'
-import xIcon from '../assets/x.png'
-import appleIcon from '../assets/apple.png'
+import googleIcon from '../assets/google.png';
+import facebookIcon from '../assets/facebook.png';
+import xIcon from '../assets/x.png';
+import appleIcon from '../assets/apple.png';
+import { Link } from 'react-router-dom';
 
 function SignUp() {
-
-    const [action, setAction] = useState('Create account');
-
     return (
         <PageContainer>
             <div className='container'>
                 <div className='top'>
-                    <div className='text'>{action}</div>
+                    <div className='text'>Create account</div>
                     <div className='underline'></div>
                 </div>
                 <div className='authenticator'>
@@ -26,36 +23,40 @@ function SignUp() {
                     <img src={xIcon} alt='x icon' />
                     <img src={appleIcon} alt='apple icon' />
                 </div>
-                {action === 'Welcome Back!' ? <div className='signOption'>or use your email account</div> : 
-                <div className='signOption'>or use your email for registration</div>}
+                <div className='signOption'>
+                    Use your best email for registration
+                </div>
                 <div className='inputs'>
-                    {action === 'Welcome Back!' ? <div></div> : <div className="input">
-                        <img src={userIcon} alt="user" />
-                        <input type="text" placeholder='Name' />
-                    </div>}                    
-                    <div className="input">
-                        <img src={emailIcon} alt="email" />
-                        <input type="email" placeholder='Email' />
+                    <div className='input'>
+                        <img src={userIcon} alt='user' />
+                        <input type='text' placeholder='Name' />
                     </div>
-                    <div className="input">
-                        <img src={passwordIcon} alt="password" />
-                        <input type="password" 
-                        placeholder={action === 'Welcome Back!' ? 'Password' : 'Create password'} />
+                    <div className='input'>
+                        <img src={emailIcon} alt='email' />
+                        <input type='email' placeholder='Email' />
                     </div>
-                    {action === 'Welcome Back!' ? <div></div> : <div className="input">
-                        <img src={passwordIcon} alt="password" />
-                        <input type="password" placeholder='Confirm password' />
-                    </div>}
-                    
-                </div> 
-                {action === 'Create account' ? <div></div> : 
-                <div className="forgotPassword">Forgot password?</div>}                   
-                <div className="submitContainer">
-                    <div className={action === 'Welcome Back!' ? 'submit gray' : 'submit'} 
-                    onClick={() => {setAction('Create account')}}>Sign Up</div>
-                    <div className={action === 'Create account' ? 'submit gray' : 'submit'} 
-                    onClick={() => {setAction('Welcome Back!')}}>Login</div>
-                </div>           
+                    <div className='input'>
+                        <img src={passwordIcon} alt='password' />
+                        <input type='password' placeholder='Create password' />
+                    </div>
+                    <div className='input'>
+                        <img src={passwordIcon} alt='password' />
+                        <input type='password' placeholder='Confirm password' />
+                    </div>
+                </div>
+                <div className='submitContainer'>
+                    <button className='submit' onClick={() => {}}>
+                        Sign Up
+                    </button>
+                </div>
+                <div className='divider-wrapper'>
+                    <div className='divider-container'>
+                        <h5 className='divider'>Or</h5>
+                    </div>
+                </div>
+                <div className='create-account-link'>
+                    <Link to='/login'>Login</Link>
+                </div>
             </div>
         </PageContainer>
     );

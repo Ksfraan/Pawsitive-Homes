@@ -23,17 +23,24 @@
 }
 
 .animal-form input {
+    padding: 0.3em;
     width: 100%;
     margin-left: 1em;
+    border: 2px solid #1e2761;
+    border-radius: 0.5em;
 }
 
 .animal-form label {
+    color: #1e2761;
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
 }
 
 .form-description {
-    width: 15em;
+    border: 2px solid #1e2761;
+    border-radius: 0.5em;
+    width: 19em;
     height: 3em;
     overflow: visible;
 }
@@ -47,7 +54,7 @@
 }
 
 .animals-details-page-wrapper h1 {
-    color: #1e2761;
+    color: antiquewhite;
 }
 
 .animals-details-page-wrapper img {
@@ -84,27 +91,56 @@
 }
 
 .animal-details-without-image p {
+    color: antiquewhite;
     padding: 0.2em;
     border-radius: 0.5em;
-    border: 1px solid #1e2761;
+    border: 1px solid antiquewhite;
     width: 90%;
     margin: 0.5em;
 }
 
 .animal-details-without-image strong {
     padding: 0.3em;
-    color: #1e2761;
+    color: antiquewhite;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .animal-form {
+        width: 70%;
+        gap: 1em;
+        background-color: antiquewhite;
+    }
+
+    .animal-details-with-image {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-bottom: 1.5em;
+    }
+
+    .animal-form input {
+        border-radius: 0.5em;
+        padding: 0.5em;
+        width: 100%;
+        margin-left: 1em;
+        border-color: #1e2761;
+    }
+
+    .form-container {
+        margin-top: 3em;
+    }
+
+    .form-container h1 {
+        font-size: 3em;
+    }
 }
 
-/*@media only screen and (min-width: 1024px) and (max-width: 1440px) {
-    
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    .animal-details-without-image p {
+        color: white;
+    }
 }
-*/
 
-/* @media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1440px) {
     .animal-form {
         display: flex;
         flex-direction: column;
@@ -137,12 +173,6 @@
     .animal-form label {
         display: flex;
         justify-content: space-between;
-    }
-
-    .form-description {
-        width: 15em;
-        height: 3em;
-        overflow: visible;
     }
 
     .animals-details-page-wrapper {
@@ -191,4 +221,4 @@
         padding: 0.3em;
         color: #1e2761;
     }
-} */
+}
