@@ -5,6 +5,7 @@
     margin-top: 2em;
     justify-content: center;
     width: 70%;
+    max-width: 620px;
     background: #fff;
     padding-bottom: 0;
     border-radius: 10px;
@@ -27,7 +28,7 @@
 }
 
 .underline {
-    width: 25%;
+    width: 90px;
     height: 6px;
     background: #1e2761;
     border-radius: 9px;
@@ -40,8 +41,8 @@
 }
 
 .authenticator img {
-    width: 7%;
-    padding: 0.5em 1em;
+    width: 10%;
+    padding: 0.5em 0.5em;
     cursor: pointer;
 }
 
