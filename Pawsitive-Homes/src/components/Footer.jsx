@@ -16,49 +16,53 @@ const Footer = () => {
             <div className='news-letter-subscription'>
                 <label htmlFor='NewsletterTitle'>Be the first to know.</label>
             </div>
-            <div>
-                <input
-                    type='text'
-                    placeholder='First Name'
-                    name='name'
-                    autoComplete='false'
-                    className='news-letter-input'
-                />
-            </div>
-            <div className='email-input-with-button'>
-                <input
-                    type='text'
-                    placeholder='Your Best Email'
-                    name='emailAddress'
-                    autoComplete='false'
-                    className='news-letter-input'
-                />
-                <button className='submit-news-letter-button'>
-                    <img
-                        src={ArrowKeyEnter}
-                        alt='Arrow key enter'
-                        className='arrow-key-enter-image'
+            <div className='wrapper'>
+                <div className='inputs-button-wrapper'>
+                    <input
+                        type='text'
+                        placeholder='First Name'
+                        name='name'
+                        autoComplete='false'
+                        className='news-letter-input'
                     />
-                </button>
-            </div>
-            <div className='footer-lists-wrapper'>
-                <ul className='footer-lists'>
-                    <li>
-                        <Link>About</Link>
-                    </li>
-                    <li>
-                        <Link>Contact</Link>
-                    </li>
-                    <li>
-                        <Link>Privacy</Link>
-                    </li>
-                    <li>
-                        <Link>Careers</Link>
-                    </li>
-                    <li>
-                        <Link>Terms & Conditions</Link>
-                    </li>
-                </ul>{' '}
+
+                    <div className='email-input-with-button'>
+                        <input
+                            type='text'
+                            placeholder='Your Best Email'
+                            name='emailAddress'
+                            autoComplete='false'
+                            className='news-letter-input'
+                        />
+                        <button className='submit-news-letter-button'>
+                            <img
+                                src={ArrowKeyEnter}
+                                alt='Arrow key enter'
+                                className='arrow-key-enter-image'
+                            />
+                        </button>
+                    </div>
+                </div>
+
+                <div className='footer-lists-wrapper'>
+                    <ul className='footer-lists'>
+                        <li>
+                            <Link>About</Link>
+                        </li>
+                        <li>
+                            <Link>Contact</Link>
+                        </li>
+                        <li>
+                            <Link>Privacy</Link>
+                        </li>
+                        <li>
+                            <Link>Careers</Link>
+                        </li>
+                        <li>
+                            <Link>Terms & Conditions</Link>
+                        </li>
+                    </ul>{' '}
+                </div>
             </div>
             <div>
                 <ul className='footer-lists-icons'>
