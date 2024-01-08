@@ -10,6 +10,10 @@
     text-align: center;
 }
 
+.footer a {
+    color: #1e2761;
+}
+
 .news-letter-subscription {
     width: 100%;
     text-align: center;
@@ -52,7 +56,7 @@
 }
 
 .footer-lists li {
-    font-size: 0.8em;
+    font-size: 0.6em;
 }
 
 .footer-lists-icons {
@@ -70,6 +74,14 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .news-letter-input {
+        height: 3.5em;
+    }
+
+    .footer a {
+        font-size: 1em;
+    }
+
     .footer-lists {
         display: grid;
         grid-template-columns: repeat(2, minmax(1em, 1fr));
@@ -85,5 +97,87 @@
     .inputs-button-wrapper {
         width: 50%;
         flex-direction: column;
+    }
+
+    .footer-lists li {
+        font-size: 0.8em;
+    }
+
+    .news-letter-subscription {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .footer {
+        padding-bottom: 2em;
+    }
+
+    .footer-lists {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(1em, 1fr));
+        grid-gap: 1em;
+        font-size: 1.7em;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .inputs-button-wrapper {
+        width: 50%;
+        flex-direction: column;
+    }
+
+    .footer-lists-icons {
+        padding: 2em;
+    }
+
+    .news-letter-input {
+        height: 3.5em;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .footer {
+        padding: 0 0 2em 0;
+    }
+
+    .footer-lists {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(1em, 1fr));
+        grid-gap: 1em;
+        grid-gap: 0.5em;
+        font-size: 1.7em;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .inputs-button-wrapper {
+        width: 50%;
+        flex-direction: column;
+    }
+
+    .footer-lists-icons {
+        padding: 2em;
+        margin: 0;
+    }
+
+    .news-letter-input {
+        height: 3.5em;
+    }
+
+    .footer p {
+        font-size: 1.3em;
+    }
+
+    .news-letter-subscription {
+        font-size: 1em;
     }
 }

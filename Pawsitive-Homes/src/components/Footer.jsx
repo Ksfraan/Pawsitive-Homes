@@ -14,7 +14,7 @@ const Footer = () => {
     return (
         <div className='footer'>
             <div className='news-letter-subscription'>
-                <label htmlFor='NewsletterTitle'>Be the first to know.</label>
+                <p>Subscribe to receive all the news.</p>
             </div>
             <div className='wrapper'>
                 <div className='inputs-button-wrapper'>
@@ -60,6 +60,9 @@ const Footer = () => {
                         </li>
                         <li>
                             <Link>Terms & Conditions</Link>
+                        </li>
+                        <li>
+                            <Link>Partnerships</Link>
                         </li>
                     </ul>{' '}
                 </div>

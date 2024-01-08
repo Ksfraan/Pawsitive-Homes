@@ -113,4 +113,43 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .animals-list ul {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(10em, 1fr));
+    }
+
+    .animals-list-add-button button {
+        align-items: center;
+        width: 10em;
+    }
+
+    .animals-list-add-button span {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .animals-list ul {
+        grid-template-columns: repeat(5, minmax(10em, 1fr));
+    }
+
+    .animals-list-add-button button {
+        align-items: center;
+        width: 10em;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .animals-list ul {
+        grid-template-columns: repeat(6, minmax(10em, 1fr));
+    }
+
+    .animals-list-add-button button {
+        align-items: center;
+        width: 12em;
+    }
+
+    .animals-list-add-button span {
+        font-size: 1.2em;
+    }
 }

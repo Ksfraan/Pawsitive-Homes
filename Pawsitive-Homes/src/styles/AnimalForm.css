@@ -108,7 +108,6 @@
     .animal-form {
         width: 70%;
         gap: 1em;
-        background-color: antiquewhite;
     }
 
     .animal-details-with-image {
@@ -129,96 +128,17 @@
         margin-top: 3em;
     }
 
+    .form-description {
+        width: 30em;
+    }
+
     .form-container h1 {
         font-size: 3em;
     }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
-    .animal-details-without-image p {
-        color: white;
-    }
 }
 
 @media only screen and (min-width: 1440px) {
-    .animal-form {
-        display: flex;
-        flex-direction: column;
-        width: 22em;
-        margin-top: 2em;
-        padding-bottom: 2em;
-        gap: 1em;
-        justify-content: left;
-        align-items: left;
-        background-color: antiquewhite;
-    }
-
-    .form-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: antiquewhite;
-        flex-direction: column;
-    }
-
-    .form-container h1 {
-        color: #1e2761;
-    }
-
-    .animal-form input {
-        width: 100%;
-        margin-left: 1em;
-    }
-
-    .animal-form label {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .animals-details-page-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .animals-details-page-wrapper h1 {
-        color: #1e2761;
-    }
-
-    .animals-details-page-wrapper img {
-        justify-content: center;
-        max-width: 100%;
-        height: 25em;
-        width: 25em;
-        object-fit: cover;
-        margin: 1em;
-    }
-
-    .additional-information-and-button {
-        display: flex;
-        align-items: center;
-        gap: 2em;
-    }
-
-    .animal-details-with-image {
-        display: flex;
-        gap: 3em;
-        flex-direction: row-reverse;
-    }
-
-    .animal-details-without-image {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .animal-details-without-image p {
-        border: 1px solid #1e2761;
-    }
-
-    .animal-details-without-image strong {
-        padding: 0.3em;
-        color: #1e2761;
-    }
 }
