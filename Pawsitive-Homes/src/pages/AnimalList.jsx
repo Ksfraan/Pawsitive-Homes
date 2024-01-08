@@ -13,6 +13,8 @@ import searchIcon from '../assets/search.png';
 const AnimalList = ({ animalSpecies }) => {
     const { animals } = useContext(AnimalListContext);
     const { isMobile } = useContext(ViewportSizeContext);
+    const [search, setSearch] = useState('searchOff');
+    const [searchTerm, setsearchTerm] = useState('');
 
     const animalData = animals?.filter((animal) => {
         switch (animalSpecies) {
@@ -25,14 +27,13 @@ const AnimalList = ({ animalSpecies }) => {
         }
     });
 
-    const [search, setSearch] = useState('searchOff');
-
     return (
         <>
             <div className='animals-list'>
                 <div className='search'>
-                    <input type="text" placeholder='search for animals' 
-                    style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}} />
+                    <input type="search" placeholder=' search for animals' 
+                    style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}} 
+                    value={searchTerm} onChange={event => setsearchTerm(event.target.value)} />
                     <img src={searchIcon} alt="Search" 
                     onClick={search === 'searchOff' ? 
                     () => { setSearch('searchOn') } : 
