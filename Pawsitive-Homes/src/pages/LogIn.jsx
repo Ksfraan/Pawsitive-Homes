@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import PageContainer from '../components/PageContainer';
 import '../styles/Authentication.css';
 import emailIcon from '../assets/email.png';
@@ -44,7 +45,9 @@ function LogIn() {
                     </button>
                 </div>
                 <div className='create-account-link'>
-                    <p>Don't have an account? <Link to='/signup'>Signup</Link></p>
+                    <p>
+                        Don't have an account? <Link to='/signup'>Signup</Link>
+                    </p>
                 </div>
             </div>
         </PageContainer>

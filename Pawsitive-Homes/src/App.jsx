@@ -9,6 +9,7 @@ import AnimalList from './pages/AnimalList';
 import DashboardPage from './pages/DashboardPage';
 import AnimalsInfoDetails from './pages/AnimalsInfoDetails';
 import AnimalForm from './pages/AnimalForm';
+import Footer from './components/Footer';
 import { AnimalContextProvider } from './context/AnimalListContext';
 import { ViewportSizeContextProvider } from './context/ViewportSizeContext';
 import './styles/App.css';
@@ -46,6 +47,7 @@ const App = () => {
                         <Route path='*' element={<Page404 />} />
                     </Routes>
                 </AnimalContextProvider>
+                <Footer />
             </div>
         </ViewportSizeContextProvider>
     );
