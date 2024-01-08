@@ -1,3 +1,7 @@
+.navbar-buttons img {
+    max-width: 49px; 
+}
+
 @media screen and (max-width: 767px) {
     .navbar {
         background-color: #408ec6;
@@ -13,12 +17,14 @@
         padding: 0.5em;
     }
 
-    .navbar a {
-        color: white;
+    .navbar-buttons img {
+        width: 34px;
+        display: flex;
+        justify-content: space-around;  
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) {
     .navbar {
         background-color: #408ec6;
         display: flex;
@@ -28,12 +34,14 @@
     .navbar-buttons {
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-around;        
+        align-items: center;
         padding: 0.5em;
+    }   
+    
+    .navbar-buttons img {
+        width: 49px;
+        display: flex;
+        justify-content: space-around;  
     }
 }
-/* 
-@media only screen and (min-width: 1024px) and (max-width: 1440px) {
-    
-}
-*/

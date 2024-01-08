@@ -1,5 +1,6 @@
 import '../styles/Navbar.css';
 import ButtonWithLink from './ButtonWithLink';
+import hamburguer from '../assets/hamburguer.png'
 
 function Navbar() {
     return (
@@ -10,8 +11,9 @@ function Navbar() {
                 <ButtonWithLink to={'/cats'}> Cats</ButtonWithLink>
                 <ButtonWithLink to={'/other-animals'}>
                     Other Pets
-                </ButtonWithLink>
-                <ButtonWithLink to={'/about'}> About</ButtonWithLink>
+                </ButtonWithLink>                
+                {/* <ButtonWithLink to={'/about'}> About</ButtonWithLink> */}
+                <img src={hamburguer} alt="search" />
             </div>
         </div>
     );

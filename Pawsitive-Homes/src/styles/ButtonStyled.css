@@ -6,7 +6,13 @@
     color: white;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+    .button-styled {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1440px) {
     .button-styled {
         font-size: 1.2em;
     }
