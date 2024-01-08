@@ -1,13 +1,20 @@
 .footer {
+    align-items: center;
     background-color: white;
     text-align: justify;
     font-size: 1em;
+    padding: 1em;
+}
+
+.footer p {
+    text-align: center;
 }
 
 .news-letter-subscription {
     width: 100%;
     text-align: center;
     color: #1e2761;
+    padding: 1em;
 }
 
 .submit-news-letter-button {
@@ -34,4 +41,30 @@
 .email-input-with-button {
     display: flex;
     align-items: center;
+}
+
+.footer-lists {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.footer-lists li {
+    font-size: 0.8em;
+}
+
+.footer-lists-icons {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-lists-icons img {
+    width: 2em;
+    height: 2em;
+    object-fit: cover;
 }
