@@ -1,6 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import '../styles/Footer.css';
 import ArrowKeyEnter from '../assets/ArrowKeyEnter.png';
+import { Link } from 'react-router-dom';
+import facebookIcon from '../assets/facebookIcon.png';
+import instagramIcon from '../assets/instagramIcon.jpeg';
+import twitterIcon from '../assets/twitterIcon.png';
+import snapchatIcon from '../assets/snapchatIcon.png';
+import whatsAppIcon from '../assets/whatsAppIcon.png';
+import youtubeIcon from '../assets/youtubeIcon.png';
+import telegramIcon from '../assets/telegramIcon.png';
 
 const Footer = () => {
     return (
@@ -33,10 +41,69 @@ const Footer = () => {
                     />
                 </button>
             </div>
-
-            <a href='https://github.com/Ksfraan/Pawsitive-Homes'>
-                Visit the repository on Github
-            </a>
+            <div className='footer-lists-wrapper'>
+                <ul className='footer-lists'>
+                    <li>
+                        <Link>About</Link>
+                    </li>
+                    <li>
+                        <Link>Contact</Link>
+                    </li>
+                    <li>
+                        <Link>Privacy</Link>
+                    </li>
+                    <li>
+                        <Link>Careers</Link>
+                    </li>
+                    <li>
+                        <Link>Terms & Conditions</Link>
+                    </li>
+                </ul>{' '}
+            </div>
+            <div>
+                <ul className='footer-lists-icons'>
+                    <li>
+                        <Link>
+                            <img src={facebookIcon} alt='Facebook icon' />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link>
+                            <img src={instagramIcon} alt='Instagram icon' />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link>
+                            <img src={twitterIcon} alt='Twitter icon' />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link>
+                            <img src={snapchatIcon} alt='Snapchat icon' />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link>
+                            <img src={whatsAppIcon} alt='WhatsApp icon' />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link>
+                            <img src={youtubeIcon} alt='Youtube icon' />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link>
+                            <img src={telegramIcon} alt='Telegram icon' />
+                        </Link>
+                    </li>
+                </ul>{' '}
+            </div>
+            <p>
+                <Link onTouchCancelCapture='https://github.com/Ksfraan/Pawsitive-Homes'>
+                    Visit our repository on Github
+                </Link>
+            </p>
         </div>
     );
 };
