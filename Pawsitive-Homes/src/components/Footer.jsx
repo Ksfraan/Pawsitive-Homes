@@ -107,7 +107,7 @@ const Footer = () => {
                 </ul>{' '}
             </div>
             <p>
-                <Link onTouchCancelCapture='https://github.com/Ksfraan/Pawsitive-Homes'>
+                <Link to='https://github.com/Ksfraan/Pawsitive-Homes'>
                     Visit our repository on Github
                 </Link>
             </p>
