@@ -6,9 +6,7 @@ import '../styles/DashboardPage.css';
 function DashboardPage() {
     return (
         <PageContainer>
-            <div className='dashboard-page-wrapper'>                
-                <div className='searchBar'><input type="text" />
-                </div>
+            <div className='dashboard-page-wrapper'>
                 <img
                     src={TopDashboard}
                     alt='image of a dog, a cat and a parrot'

@@ -13,7 +13,6 @@ function Navbar() {
                     Other Pets
                 </ButtonWithLink>                
                 {/* <ButtonWithLink to={'/about'}> About</ButtonWithLink> */}
-                <img src={hamburguer} alt="search" />
             </div>
         </div>
     );
