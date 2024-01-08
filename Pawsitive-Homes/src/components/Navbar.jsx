@@ -1,6 +1,5 @@
 import '../styles/Navbar.css';
 import ButtonWithLink from './ButtonWithLink';
-import hamburguer from '../assets/hamburguer.png'
 
 function Navbar() {
     return (

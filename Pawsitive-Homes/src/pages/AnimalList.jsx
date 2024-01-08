@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ButtonWithLink from '../components/ButtonWithLink';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import PlusSign from '../assets/plus-sign.png';
 import TouchSymbol from '../assets/touch-screen-symbol.png';
 import { AnimalListContext } from '../context/AnimalListContext';
 import { ViewportSizeContext } from '../context/ViewportSizeContext';
 import { animalAgeConverter } from '../utils/AnimalAgeConverter';
 import '../styles/AnimalList.css';
+import searchIcon from '../assets/search.png';
 
 const AnimalList = ({ animalSpecies }) => {
     const { animals } = useContext(AnimalListContext);
@@ -24,9 +25,19 @@ const AnimalList = ({ animalSpecies }) => {
         }
     });
 
+    const [search, setSearch] = useState('searchOff');
+
     return (
         <>
             <div className='animals-list'>
+                <div className='search'>
+                    <input type="text" placeholder='search for animals' 
+                    style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}} />
+                    <img src={searchIcon} alt="Search" 
+                    onClick={search === 'searchOff' ? 
+                    () => { setSearch('searchOn') } : 
+                    () => { setSearch('searchOff') }}/>                    
+                </div>
                 <center>
                     <h1>Animals for adoption</h1>
                 </center>

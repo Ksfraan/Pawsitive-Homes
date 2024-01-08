@@ -91,5 +91,24 @@
     width: 100%;
 }
 
+.search {
+    display: flex;
+    justify-content: end;
+    padding-top: 1%;
+    margin-right: 1%;
+}
+
+.search img {    
+    height: 2.3rem;
+}
+
+.search input {
+    width: 100%;
+    max-width: 300px;
+    height: 2rem;
+    border-radius: 9px;
+    margin-right: 1%
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 }
