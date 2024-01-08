@@ -12,10 +12,16 @@
     background-color: #e5f1e4;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+.searchBar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
-/*@media only screen and (min-width: 1024px) and (max-width: 1440px) {
-    
+/* @media screen and (min-width: 768px) and (max-width: 1024px) {
 }
-*/
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    
+} */
