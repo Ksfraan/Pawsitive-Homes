@@ -47,7 +47,7 @@ const Footer = () => {
                 <div className='footer-lists-wrapper'>
                     <ul className='footer-lists'>
                         <li>
-                            <Link>About</Link>
+                            <Link to='/about'>About</Link>
                         </li>
                         <li>
                             <Link>Contact</Link>

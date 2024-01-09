@@ -135,10 +135,61 @@
     .form-container h1 {
         font-size: 3em;
     }
+
+    .additional-information-and-button h1 {
+        margin-left: 0.5em;
+        font-size: 1.8em;
+    }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .animal-form {
+        width: 70%;
+        gap: 1em;
+    }
+
+    .form-container h1 {
+        font-size: 3em;
+    }
+
+    .animal-details-with-image {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-bottom: 1.5em;
+    }
+
+    .form-description {
+        width: 30em;
+    }
 }
 
 @media only screen and (min-width: 1440px) {
+    .additional-information-and-button h1 {
+        margin-left: 0.5em;
+        font-size: 2em;
+    }
+
+    .animal-details-with-image {
+        flex-direction: row-reverse;
+        padding-bottom: 1.5em;
+    }
+
+    .animal-form {
+        width: 70%;
+        gap: 1em;
+    }
+
+    .form-container h1 {
+        font-size: 3em;
+    }
+
+    .animal-details-with-image {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-bottom: 1.5em;
+    }
+
+    .form-description {
+        width: 50em;
+    }
 }

@@ -9,6 +9,7 @@ import { ViewportSizeContext } from '../context/ViewportSizeContext';
 import { animalAgeConverter } from '../utils/AnimalAgeConverter';
 import '../styles/AnimalList.css';
 import searchIcon from '../assets/search.png';
+import PageContainer from '../components/PageContainer';
 
 const AnimalList = ({ animalSpecies }) => {
     const { animals } = useContext(AnimalListContext);
@@ -69,7 +70,7 @@ const AnimalList = ({ animalSpecies }) => {
     }); */
 
     return (
-        <>
+        <PageContainer>
             <div className='animals-list'>
                 <div className='search'>
                 <select name='Age' 
@@ -155,7 +156,7 @@ const AnimalList = ({ animalSpecies }) => {
                         : null}
                 </ul>
             </div>
-        </>
+        </PageContainer>
     );
 };
 
