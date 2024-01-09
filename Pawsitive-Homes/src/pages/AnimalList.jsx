@@ -9,6 +9,7 @@ import { ViewportSizeContext } from '../context/ViewportSizeContext';
 import { animalAgeConverter } from '../utils/AnimalAgeConverter';
 import '../styles/AnimalList.css';
 import searchIcon from '../assets/search.png';
+import PageContainer from '../components/PageContainer';
 
 const AnimalList = ({ animalSpecies }) => {
     const { animals } = useContext(AnimalListContext);
@@ -28,16 +29,33 @@ const AnimalList = ({ animalSpecies }) => {
     });
 
     return (
-        <>
+        <PageContainer>
             <div className='animals-list'>
                 <div className='search'>
-                    <input type="search" placeholder=' search for animals' 
-                    style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}} 
-                    value={searchTerm} onChange={event => setsearchTerm(event.target.value)} />
-                    <img src={searchIcon} alt="Search" 
-                    onClick={search === 'searchOff' ? 
-                    () => { setSearch('searchOn') } : 
-                    () => { setSearch('searchOff') }}/>                    
+                    <input
+                        type='search'
+                        placeholder=' search for animals'
+                        style={
+                            search === 'searchOff'
+                                ? { display: 'none' }
+                                : { display: 'block' }
+                        }
+                        value={searchTerm}
+                        onChange={(event) => setsearchTerm(event.target.value)}
+                    />
+                    <img
+                        src={searchIcon}
+                        alt='Search'
+                        onClick={
+                            search === 'searchOff'
+                                ? () => {
+                                      setSearch('searchOn');
+                                  }
+                                : () => {
+                                      setSearch('searchOff');
+                                  }
+                        }
+                    />
                 </div>
                 <center>
                     <h1>Animals for adoption</h1>
@@ -90,7 +108,7 @@ const AnimalList = ({ animalSpecies }) => {
                         : null}
                 </ul>
             </div>
-        </>
+        </PageContainer>
     );
 };
 
