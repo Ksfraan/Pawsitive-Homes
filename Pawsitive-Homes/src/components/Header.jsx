@@ -1,6 +1,6 @@
 import logo from '../assets/OrganizationName.png';
 import MainLogo from '../assets/MainLogo.png';
-import '../styles/Header.css';
+// import '../styles/Header.css';
 import { Link } from 'react-router-dom';
 import AccountLogo from '../assets/usericon.png';
 
