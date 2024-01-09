@@ -15,7 +15,7 @@ const AnimalList = ({ animalSpecies }) => {
     const { animals } = useContext(AnimalListContext);
     const { isMobile } = useContext(ViewportSizeContext);
     const [search, setSearch] = useState('searchOff');
-    const [selectedAge, setSelectedAge] = useState();
+    const [selectedAge, setSelectedAge] = useState('');
     const [selectedGender, setSelectedGender] = useState('');
     const [selectedCity, setSelectedCity] = useState('');
     const sortArray = (array) => {
@@ -37,37 +37,13 @@ const AnimalList = ({ animalSpecies }) => {
         const ageCondition =
             selectedAge === '' || 
             (animal.age === selectedAge && typeof animal.age === 'string') || 
-            (animal.age >= selectedAge && typeof animal.age === 'number'); 
+            (animal.age == selectedAge && typeof animal.age === 'number'); 
   
         const genderCondition = !selectedGender || animal.gender === selectedGender;
         const cityCondition = !selectedCity || animal.city === selectedCity;
   
         return speciesCondition && ageCondition && genderCondition && cityCondition;
     });
-
-    /* const animalData = animals?.filter((animal) => {
-        const speciesCondition = 
-            animalSpecies === 'All Species' || 
-            (animalSpecies === 'Others' && animal.species !== 'Cat' && animal.species !== 'Dog') ||
-            animal.species === animalSpecies;
-
-        const ageCondition = !selectedAge || animal.age === selectedAge;
-        const genderCondition = !selectedGender || animal.gender === selectedGender;
-        const cityCondition = !selectedCity || animal.city === selectedCity;
-
-        return speciesCondition && ageCondition && genderCondition && cityCondition;
-    }); */
-
-    /* const animalData = animals?.filter((animal) => {
-        switch (animalSpecies) {
-            case 'Others':
-                return animal.species !== 'Cat' && animal.species !== 'Dog';
-            case 'All Species':
-                return animal;
-            default:
-                return animal.species === animalSpecies;
-        }
-    }); */
 
     return (
         <PageContainer>
