@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useFetcher } from 'react-router-dom';
 import ButtonWithLink from '../components/ButtonWithLink';
 import { useContext, useState } from 'react';
 import PlusSign from '../assets/plus-sign.png';
@@ -14,9 +14,50 @@ const AnimalList = ({ animalSpecies }) => {
     const { animals } = useContext(AnimalListContext);
     const { isMobile } = useContext(ViewportSizeContext);
     const [search, setSearch] = useState('searchOff');
-    const [searchTerm, setsearchTerm] = useState('');
+    const [selectedAge, setSelectedAge] = useState();
+    const [selectedGender, setSelectedGender] = useState('');
+    const [selectedCity, setSelectedCity] = useState('');
+    const sortArray = (array) => {
+        return array.sort((a, b) => {
+            if (typeof a === 'string' && typeof b === 'string') {
+                return a.localeCompare(b);
+            } else {
+                return a - b;
+            }
+        });
+    };
 
     const animalData = animals?.filter((animal) => {
+        const speciesCondition =
+            animalSpecies === 'All Species' ||
+            (animalSpecies === 'Others' && animal.species !== 'Cat' && animal.species !== 'Dog') ||
+            animal.species === animalSpecies;
+  
+        const ageCondition =
+            selectedAge === '' || 
+            (animal.age === selectedAge && typeof animal.age === 'string') || 
+            (animal.age >= selectedAge && typeof animal.age === 'number'); 
+  
+        const genderCondition = !selectedGender || animal.gender === selectedGender;
+        const cityCondition = !selectedCity || animal.city === selectedCity;
+  
+        return speciesCondition && ageCondition && genderCondition && cityCondition;
+    });
+
+    /* const animalData = animals?.filter((animal) => {
+        const speciesCondition = 
+            animalSpecies === 'All Species' || 
+            (animalSpecies === 'Others' && animal.species !== 'Cat' && animal.species !== 'Dog') ||
+            animal.species === animalSpecies;
+
+        const ageCondition = !selectedAge || animal.age === selectedAge;
+        const genderCondition = !selectedGender || animal.gender === selectedGender;
+        const cityCondition = !selectedCity || animal.city === selectedCity;
+
+        return speciesCondition && ageCondition && genderCondition && cityCondition;
+    }); */
+
+    /* const animalData = animals?.filter((animal) => {
         switch (animalSpecies) {
             case 'Others':
                 return animal.species !== 'Cat' && animal.species !== 'Dog';
@@ -25,16 +66,40 @@ const AnimalList = ({ animalSpecies }) => {
             default:
                 return animal.species === animalSpecies;
         }
-    });
+    }); */
 
     return (
         <>
             <div className='animals-list'>
                 <div className='search'>
-                    <input type="search" placeholder=' search for animals' 
-                    style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}} 
-                    value={searchTerm} onChange={event => setsearchTerm(event.target.value)} />
-                    <img src={searchIcon} alt="Search" 
+                <select name='Age' 
+                style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}}
+                value={selectedAge}
+                onChange={(event) => setSelectedAge(event.target.value)}>
+                    <option value="">All ages</option>
+                    {sortArray([...new Set(animals.map((options) => options.age))]).map((age, i) => (
+                        <option key={i}>{age}</option>
+                    ))} 
+                </select>
+                <select name='Gender' 
+                style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}}
+                value={selectedGender}
+                onChange={(event) => setSelectedGender(event.target.value)}>
+                    <option value="">All genders</option>
+                    {sortArray([...new Set(animals.map((options) => options.gender))]).map((gender, i) => (
+                        <option key={i}>{gender}</option>
+                    ))}
+                </select>
+                <select name='City' 
+                style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}}
+                value={selectedCity}
+                onChange={(event) => setSelectedCity(event.target.value)}>
+                    <option value="">All cities</option>                    
+                    {sortArray([...new Set(animals.map((options) => options.city))]).map((city, i) => (
+                        <option key={i}>{city}</option>
+                    ))}
+                </select>
+                <img src={searchIcon} alt="Search" 
                     onClick={search === 'searchOff' ? 
                     () => { setSearch('searchOn') } : 
                     () => { setSearch('searchOff') }}/>                    
