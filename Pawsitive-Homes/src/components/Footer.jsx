@@ -3,7 +3,7 @@ import '../styles/Footer.css';
 import ArrowKeyEnter from '../assets/ArrowKeyEnter.png';
 import { Link } from 'react-router-dom';
 import facebookIcon from '../assets/facebookIcon.png';
-import instagramIcon from '../assets/InstagramIcon.jpeg';
+import instagramIcon from '../assets/InstagramIcon.png';
 import twitterIcon from '../assets/twitterIcon.png';
 import snapchatIcon from '../assets/snapchatIcon.png';
 import whatsAppIcon from '../assets/whatsAppIcon.png';
