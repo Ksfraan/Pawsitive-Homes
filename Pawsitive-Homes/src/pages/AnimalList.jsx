@@ -28,6 +28,14 @@ const AnimalList = ({ animalSpecies }) => {
         });
     };
 
+    const toggleSearch = () => {
+        setSearch((prevState) => (prevState === 'searchOff' ? 'searchOn' : 'searchOff'));
+    };
+
+    const handleImageClick = () => {
+        toggleSearch();
+    };
+
     const animalData = animals?.filter((animal) => {
         const speciesCondition =
             animalSpecies === 'All Species' ||
@@ -48,38 +56,35 @@ const AnimalList = ({ animalSpecies }) => {
     return (
         <PageContainer>
             <div className='animals-list'>
-                <div className='search'>
-                <select name='Age' 
-                style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}}
-                value={selectedAge}
-                onChange={(event) => setSelectedAge(event.target.value)}>
-                    <option value="">All ages</option>
-                    {sortArray([...new Set(animals.map((options) => options.age))]).map((age, i) => (
-                        <option key={i}>{age}</option>
-                    ))} 
-                </select>
-                <select name='Gender' 
-                style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}}
-                value={selectedGender}
-                onChange={(event) => setSelectedGender(event.target.value)}>
-                    <option value="">All genders</option>
-                    {sortArray([...new Set(animals.map((options) => options.gender))]).map((gender, i) => (
-                        <option key={i}>{gender}</option>
-                    ))}
-                </select>
-                <select name='City' 
-                style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}}
-                value={selectedCity}
-                onChange={(event) => setSelectedCity(event.target.value)}>
-                    <option value="">All cities</option>                    
-                    {sortArray([...new Set(animals.map((options) => options.city))]).map((city, i) => (
-                        <option key={i}>{city}</option>
-                    ))}
-                </select>
-                <img src={searchIcon} alt="Search" 
-                    onClick={search === 'searchOff' ? 
-                    () => { setSearch('searchOn') } : 
-                    () => { setSearch('searchOff') }}/>                    
+                <div className={`search`}>
+                    <select className={`select ${search}`} name='Age' 
+                    style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}}
+                    value={selectedAge}
+                    onChange={(event) => setSelectedAge(event.target.value)}>
+                        <option value="">All ages</option>
+                        {sortArray([...new Set(animals.map((options) => options.age))]).map((age, i) => (
+                            <option key={i}>{age}</option>
+                        ))} 
+                    </select>
+                    <select name='Gender' 
+                    style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}}
+                    value={selectedGender}
+                    onChange={(event) => setSelectedGender(event.target.value)}>
+                        <option value="">All genders</option>
+                        {sortArray([...new Set(animals.map((options) => options.gender))]).map((gender, i) => (
+                            <option key={i}>{gender}</option>
+                        ))}
+                    </select>
+                    <select name='City' 
+                    style={search === 'searchOff' ? {display: 'none'} : {display: 'block'}}
+                    value={selectedCity}
+                    onChange={(event) => setSelectedCity(event.target.value)}>
+                        <option value="">All cities</option>                    
+                        {sortArray([...new Set(animals.map((options) => options.city))]).map((city, i) => (
+                            <option key={i}>{city}</option>
+                        ))}
+                    </select>
+                    <img src={searchIcon} alt="Search" onClick={handleImageClick} />                    
                 </div>
                 <center>
                     <h1>Animals for adoption</h1>
