@@ -94,7 +94,7 @@ const AnimalForm = () => {
                         name: 'age',
                     })}
                     <label>
-                        Description:
+                        Description
                         <textarea
                             type='text'
                             name='description'

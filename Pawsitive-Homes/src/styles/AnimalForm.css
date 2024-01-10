@@ -40,7 +40,8 @@
 .form-description {
     border: 2px solid #1e2761;
     border-radius: 0.5em;
-    width: 19em;
+    width: 100%;
+    margin-left: 1em;
     height: 3em;
     overflow: visible;
 }
@@ -141,7 +142,8 @@
     }
 
     .form-description {
-        width: 30em;
+        width: 100%;
+        margin-left: 1em;
     }
 
     .form-container h1 {
@@ -156,7 +158,7 @@
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
     .animal-form {
-        width: 70%;
+        width: 50%;
         gap: 1em;
     }
 
@@ -171,7 +173,8 @@
     }
 
     .form-description {
-        width: 30em;
+        width: 100%;
+        margin-left: 1em;
     }
 }
 
@@ -187,7 +190,7 @@
     }
 
     .animal-form {
-        width: 70%;
+        width: 50%;
         gap: 1em;
     }
 
@@ -202,6 +205,6 @@
     }
 
     .form-description {
-        width: 50em;
+        width: 100%;
     }
 }
