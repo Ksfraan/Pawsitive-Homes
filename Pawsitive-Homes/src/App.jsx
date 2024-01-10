@@ -35,7 +35,6 @@ const App = () => {
                 <Navbar />
                     <Routes>
                         <Route path='/' element={<DashboardPage />} />
-
                         <Route
                             path='/dogs'
                             element={<AnimalList animalSpecies='Dog' />}

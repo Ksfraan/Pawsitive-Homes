@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useState, useEffect, useContext } from 'react';
 import { AnimalListContext } from '../context/AnimalListContext';
 import ButtonStyled from './ButtonStyled';
+import ScrollToTop from './ScrollToTop';
 
 const AnimalUpdateForm = ({ animal }) => {
     const { fetchAnimals } = useContext(AnimalListContext);
@@ -160,7 +161,7 @@ const AnimalUpdateForm = ({ animal }) => {
                         required
                     />
                 </label>
-
+                
                 <ButtonStyled type='submit'>Update Animal</ButtonStyled>
             </form>
         </div>
