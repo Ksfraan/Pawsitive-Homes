@@ -70,37 +70,37 @@ const Footer = () => {
             <div>
                 <ul className='footer-lists-icons'>
                     <li>
-                        <Link>
+                        <Link to='https://www.facebook.com/'>
                             <img src={facebookIcon} alt='Facebook icon' />
                         </Link>
                     </li>
                     <li>
-                        <Link>
+                        <Link to='https://www.instagram.com/'>
                             <img src={instagramIcon} alt='Instagram icon' />
                         </Link>
                     </li>
                     <li>
-                        <Link>
+                        <Link to='https://twitter.com/'>
                             <img src={twitterIcon} alt='Twitter icon' />
                         </Link>
                     </li>
                     <li>
-                        <Link>
+                        <Link to='https://www.snapchat.com/'>
                             <img src={snapchatIcon} alt='Snapchat icon' />
                         </Link>
                     </li>
                     <li>
-                        <Link>
+                        <Link to='https://web.whatsapp.com/'>
                             <img src={whatsAppIcon} alt='WhatsApp icon' />
                         </Link>
                     </li>
                     <li>
-                        <Link>
+                        <Link to='https://www.youtube.com/'>
                             <img src={youtubeIcon} alt='Youtube icon' />
                         </Link>
                     </li>
                     <li>
-                        <Link>
+                        <Link to='https://web.telegram.org/'>
                             <img src={telegramIcon} alt='Telegram icon' />
                         </Link>
                     </li>

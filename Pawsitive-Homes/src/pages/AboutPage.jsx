@@ -4,6 +4,7 @@ import '../styles/AboutPage.css';
 import Carina from '../assets/CarinaPhoto.jpeg';
 import Miguel from '../assets/MiguelPhoto.jpeg';
 import ButtonWithLink from '../components/ButtonWithLink';
+import { useEffect } from 'react';
 
 function AboutPage() {
     return (

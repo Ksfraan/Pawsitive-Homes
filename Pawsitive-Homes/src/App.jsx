@@ -33,7 +33,6 @@ const App = () => {
             <div className='app-main-wrapper'>
                 <Header />
                 <Navbar />
-                <AnimalContextProvider>
                     <Routes>
                         <Route path='/' element={<DashboardPage />} />
 
@@ -57,9 +56,8 @@ const App = () => {
                         <Route path='/about' element={<AboutPage />} />
                         <Route path='/login' element={<LogIn />} />
                         <Route path='/signup' element={<SignUp />} />
-                        <Route path='/*' element={<Page404 />} />
+                        <Route path='*' element={<Page404 />} />
                     </Routes>
-                </AnimalContextProvider>
                 <Footer />
             </div>
         </ViewportSizeContextProvider>
