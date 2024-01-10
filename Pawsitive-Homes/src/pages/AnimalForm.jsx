@@ -140,7 +140,7 @@ const AnimalForm = () => {
                     </label>
 
                     {hasError && <p className='error'>An error has occured!</p>}
-                    {!isAdded && (
+                    {isAdded && (
                         <p className='successfullMessage'>
                             {'Animal Added successfully!'}
                         </p>
