@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: `http://${import.meta.env.VITE_APP_API_ENDPOINT}`,
+    baseURL: import.meta.env.VITE_APP_API_ENDPOINT,
 });
 
 const getAnimals = async () => {
