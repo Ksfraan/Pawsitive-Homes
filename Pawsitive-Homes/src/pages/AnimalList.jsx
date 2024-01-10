@@ -18,6 +18,7 @@ const AnimalList = ({ animalSpecies }) => {
     const [selectedAge, setSelectedAge] = useState('');
     const [selectedGender, setSelectedGender] = useState('');
     const [selectedCity, setSelectedCity] = useState('');
+
     const sortArray = (array) => {
         return array.sort((a, b) => {
             if (typeof a === 'string' && typeof b === 'string') {

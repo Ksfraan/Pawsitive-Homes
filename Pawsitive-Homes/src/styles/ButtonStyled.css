@@ -15,6 +15,10 @@
     .button-styled {
         font-size: 1.2em;
     }
+
+    .button-styled a {
+        width: 1.2em;
+    }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
@@ -26,6 +30,10 @@
         font-size: 1.2em;
         width: 10em;
     }
+
+    .button-styled a {
+        width: 10em;
+    }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -35,6 +43,10 @@
 
     .button-styled {
         font-size: 1.2em;
+        width: 10em;
+    }
+
+    .button-styled a {
         width: 10em;
     }
 }
