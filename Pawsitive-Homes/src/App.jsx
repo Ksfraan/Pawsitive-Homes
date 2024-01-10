@@ -13,8 +13,21 @@ import Footer from './components/Footer';
 import { AnimalContextProvider } from './context/AnimalListContext';
 import { ViewportSizeContextProvider } from './context/ViewportSizeContext';
 import './styles/App.css';
+import { useEffect } from 'react';
 
 const App = () => {
+    useEffect(() => {
+        const handleBeforeUnload = () => {
+            window.scrollTo(0, 0);
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, []);
+
     return (
         <ViewportSizeContextProvider>
             <div className='app-main-wrapper'>
@@ -44,7 +57,7 @@ const App = () => {
                         <Route path='/about' element={<AboutPage />} />
                         <Route path='/login' element={<LogIn />} />
                         <Route path='/signup' element={<SignUp />} />
-                        <Route path='*' element={<Page404 />} />
+                        <Route path='/*' element={<Page404 />} />
                     </Routes>
                 </AnimalContextProvider>
                 <Footer />

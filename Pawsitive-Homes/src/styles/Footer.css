@@ -1,6 +1,6 @@
 .footer {
     align-items: center;
-    background-color: white;
+    background-color: #769271;
     text-align: justify;
     font-size: 1em;
     padding: 1em;
@@ -40,6 +40,10 @@
     border-bottom: 0.1rem solid #000;
     outline: 0;
     background-color: transparent;
+}
+
+::placeholder {
+    color: black;
 }
 
 .email-input-with-button {

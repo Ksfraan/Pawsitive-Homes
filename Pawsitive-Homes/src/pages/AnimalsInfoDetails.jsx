@@ -6,6 +6,7 @@ import { useContext, useState } from 'react';
 import { AnimalListContext } from '../context/AnimalListContext';
 import ButtonStyled from '../components/ButtonStyled';
 import { animalAgeConverter } from '../utils/AnimalAgeConverter';
+import AdoptionForm from '../components/AdoptionForm';
 
 function AnimalsInfoDetails() {
     const { animals, fetchAnimals } = useContext(AnimalListContext);
@@ -69,6 +70,9 @@ function AnimalsInfoDetails() {
                             </p>
                         </div>
                         <img src={details.image} alt={details.name} />
+                    </div>
+                    <div className='adoption-form-wrapper'>
+                        <AdoptionForm animal={details} />
                     </div>
                 </div>
                 <AnimalUpdateForm animal={details} />
