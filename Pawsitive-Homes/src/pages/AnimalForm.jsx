@@ -23,8 +23,14 @@ const initialFormData = {
 const AnimalForm = () => {
     const { fetchAnimals } = useContext(AnimalListContext);
     const [formData, setFormData] = useState(initialFormData);
+    const [isAdded, setIsAdded] = useState(null);
+    const [hasError, setHasError] = useState(null);
 
     const handleChange = (e) => {
+        if (isAdded) {
+            setIsAdded(false);
+        }
+
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
@@ -39,11 +45,17 @@ const AnimalForm = () => {
             id: uuidv4(),
         };
 
-        animalsApi.addAnimal(formDataWithId).then(() => {
-            fetchAnimals();
-            // reset formData
+        try {
+            await animalsApi.addAnimal(formDataWithId);
+
             setFormData(initialFormData);
-        });
+            setIsAdded(true);
+
+            fetchAnimals();
+        } catch (error) {
+            console.log('Error adding animal:', error);
+            setHasError(true);
+        }
     };
 
     const renderLabelWithInput = (label, props) => (
@@ -126,6 +138,13 @@ const AnimalForm = () => {
                             <option value={false}>No</option>
                         </select>
                     </label>
+
+                    {hasError && <p className='error'>An error has occured!</p>}
+                    {!isAdded && (
+                        <p className='successfullMessage'>
+                            {'Animal Added successfully!'}
+                        </p>
+                    )}
 
                     <ButtonStyled type='submit'>Add Animal</ButtonStyled>
                 </form>

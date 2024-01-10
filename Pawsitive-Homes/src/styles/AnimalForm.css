@@ -104,6 +104,18 @@
     color: antiquewhite;
 }
 
+.successfullMessage {
+    color: rgb(24, 195, 44);
+    font-weight: bold;
+    font-size: 2em;
+    text-shadow: black;
+}
+
+.error {
+    color: red;
+    text-shadow: black;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .animal-form {
         width: 70%;

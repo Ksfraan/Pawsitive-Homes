@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import '../styles/ButtonStyled.css';
 
-const ButtonStyled = ({ colorOverride, children }) => (
+const ButtonStyled = ({ colorOverride, onClick, children }) => (
     <button
         className='button-styled'
         style={{ backgroundColor: colorOverride }}
+        onClick={onClick}
     >
         {children}
     </button>
@@ -16,6 +17,7 @@ ButtonStyled.propTypes = {
         PropTypes.array.isRequired,
     ]),
     colorOverride: PropTypes.string,
+    onClick: PropTypes.func,
 };
 
 export default ButtonStyled;

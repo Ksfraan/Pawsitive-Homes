@@ -33,6 +33,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    height: 100%;
 }
 
 .animal-list-item a {
@@ -89,6 +90,7 @@
 .image-wrapper {
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
 .search {
@@ -104,9 +106,13 @@
 }
 
 @include keyframes(moveIn) {
-    0%   { transform: translate( 1000%, 0); }
-    100% { transform: translate( 0%, 0); }
-  }
+    0% {
+        transform: translate(1000%, 0);
+    }
+    100% {
+        transform: translate(0%, 0);
+    }
+}
 
 .search select {
     width: 50%;
@@ -118,7 +124,7 @@
     animation-name: moveIn;
     animation-duration: 1.5s;
     animation-iteration-count: 1;
-    animation-timing-function: cubic-bezier(1, 1.1, 0, 1.1); 
+    animation-timing-function: cubic-bezier(1, 1.1, 0, 1.1);
     animation-fill-mode: forwards;
     animation-delay: 0.5s;
 }
