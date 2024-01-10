@@ -120,6 +120,12 @@
         grid-template-columns: repeat(4, minmax(10em, 1fr));
     }
 
+    .animals-list-add-button {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+
     .animals-list-add-button button {
         align-items: center;
         width: 10em;
@@ -127,6 +133,10 @@
 
     .animals-list-add-button span {
         font-size: 1.2em;
+    }
+
+    .animals-list-add-button a {
+        width: 10em;
     }
 }
 
@@ -139,11 +149,27 @@
         align-items: center;
         width: 10em;
     }
+
+    .animals-list-add-button {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .animals-list-add-button a {
+        width: 10em;
+    }
 }
 
 @media screen and (min-width: 1440px) {
     .animals-list ul {
         grid-template-columns: repeat(6, minmax(10em, 1fr));
+    }
+
+    .animals-list-add-button {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
     }
 
     .animals-list-add-button button {
@@ -153,5 +179,9 @@
 
     .animals-list-add-button span {
         font-size: 1.2em;
+    }
+
+    .animals-list-add-button a {
+        width: 12em;
     }
 }
