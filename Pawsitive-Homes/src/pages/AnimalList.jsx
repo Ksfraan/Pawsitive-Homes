@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Link, useFetcher } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ButtonWithLink from '../components/ButtonWithLink';
 import { useContext, useState } from 'react';
 import PlusSign from '../assets/plus-sign.png';
@@ -39,18 +39,23 @@ const AnimalList = ({ animalSpecies }) => {
     const animalData = animals?.filter((animal) => {
         const speciesCondition =
             animalSpecies === 'All Species' ||
-            (animalSpecies === 'Others' && animal.species !== 'Cat' && animal.species !== 'Dog') ||
+            (animalSpecies === 'Others' &&
+                animal.species !== 'Cat' &&
+                animal.species !== 'Dog') ||
             animal.species === animalSpecies;
-  
+
         const ageCondition =
-            selectedAge === '' || 
-            (animal.age === selectedAge && typeof animal.age === 'string') || 
-            (animal.age == selectedAge && typeof animal.age === 'number'); 
-  
-        const genderCondition = !selectedGender || animal.gender === selectedGender;
+            selectedAge === '' ||
+            (animal.age === selectedAge && typeof animal.age === 'string') ||
+            (animal.age == selectedAge && typeof animal.age === 'number');
+
+        const genderCondition =
+            !selectedGender || animal.gender === selectedGender;
         const cityCondition = !selectedCity || animal.city === selectedCity;
-  
-        return speciesCondition && ageCondition && genderCondition && cityCondition;
+
+        return (
+            speciesCondition && ageCondition && genderCondition && cityCondition
+        );
     });
 
     return (

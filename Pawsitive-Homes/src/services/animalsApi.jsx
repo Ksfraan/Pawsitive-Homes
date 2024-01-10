@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:3001',
+    baseURL: import.meta.env.VITE_APP_API_ENDPOINT,
 });
 
 const getAnimals = async () => {
@@ -16,6 +16,7 @@ const addAnimal = async (newAnimal) => {
 
 const updateAnimal = async (id, updatedAnimal) => {
     const response = await api.put(`/animals/${id}`, updatedAnimal);
+
     return response.data;
 };
 
