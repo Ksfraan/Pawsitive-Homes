@@ -28,3 +28,11 @@
 .adoption-form label {
     color: #18c32c;
 }
+
+.success-message {
+    background-color: #5aa03e;
+    border: 1px solid #d0e9c6;
+    color: #3c763d;
+    padding: 15px;
+    margin-bottom: 15px;
+}
