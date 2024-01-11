@@ -36,3 +36,23 @@
     padding: 15px;
     margin-bottom: 15px;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form input {
+    width: 100%;
+    border-radius: 0.5em;
+    height: 2em;
+}
+
+form textarea {
+    width: 100%;
+    overflow: visible;
+    height: 3em;
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+}

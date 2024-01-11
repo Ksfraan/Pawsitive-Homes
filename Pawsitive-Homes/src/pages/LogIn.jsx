@@ -1,4 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PageContainer from '../components/PageContainer';
 import '../styles/Authentication.css';
 import emailIcon from '../assets/email.png';
@@ -7,14 +9,41 @@ import googleIcon from '../assets/google.png';
 import facebookIcon from '../assets/facebook.png';
 import xIcon from '../assets/x.png';
 import appleIcon from '../assets/apple.png';
-import { Link } from 'react-router-dom';
 
 function LogIn() {
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+    });
+
+    const [isWelcomeVisible, setWelcomeVisible] = useState(true);
+    const [isLoggedInVisible, setLoggedInVisible] = useState(false);
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.type]: e.target.value,
+        });
+    };
+
+    const handleLogin = () => {
+        setFormData({
+            email: '',
+            password: '',
+        });
+
+        setWelcomeVisible(false);
+        setLoggedInVisible(true);
+    };
+
     return (
         <PageContainer>
             <div className='container'>
                 <div className='top'>
-                    <div className='text'>Welcome Back!</div>
+                    <div className='text'>
+                        {isWelcomeVisible ? 'Welcome Back!' : ''}
+                        {isLoggedInVisible ? 'You are logged in!' : ''}
+                    </div>
                     <div className='underline'></div>
                 </div>
                 <div className='authenticator'>
@@ -31,16 +60,26 @@ function LogIn() {
                 <div className='inputs'>
                     <div className='input'>
                         <img src={emailIcon} alt='email' />
-                        <input type='email' placeholder='Email' />
+                        <input
+                            type='email'
+                            placeholder='Email'
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
                     </div>
                     <div className='input'>
                         <img src={passwordIcon} alt='password' />
-                        <input type='password' placeholder='Password' />
+                        <input
+                            type='password'
+                            placeholder='Password'
+                            value={formData.password}
+                            onChange={handleChange}
+                        />
                     </div>
                 </div>
                 <Link className='forgotPassword'>Forgot password?</Link>
                 <div className='submitContainer'>
-                    <button className='submit' onClick={() => {}}>
+                    <button className='submit' onClick={handleLogin}>
                         Login
                     </button>
                 </div>
