@@ -23,7 +23,6 @@ function Navbar() {
                 >
                     Other Pets
                 </ButtonWithLink>
-                {/* <ButtonWithLink to={'/about'}> About</ButtonWithLink> */}
             </div>
         </div>
     );

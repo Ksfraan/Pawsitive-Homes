@@ -79,9 +79,13 @@ function AnimalsInfoDetails() {
             </>
         </PageContainer>
     ) : (
-        <p>
-            {isDeleted ? 'Animal deleted successfully!' : 'Animal not found!'}
-        </p>
+        <div className='deleted-animal-message'>
+            <p>
+                {isDeleted
+                    ? 'Animal deleted successfully!'
+                    : 'Animal not found!'}
+            </p>
+        </div>
     );
 }
 
