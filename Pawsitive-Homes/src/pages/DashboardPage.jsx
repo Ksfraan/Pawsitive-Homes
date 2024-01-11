@@ -12,7 +12,7 @@ function DashboardPage() {
                     alt='image of a dog, a cat and a parrot'
                     className='dashboard-animals-images'
                 />
-                
+
                 <AnimalList animalSpecies='All Species' />
             </div>
         </PageContainer>

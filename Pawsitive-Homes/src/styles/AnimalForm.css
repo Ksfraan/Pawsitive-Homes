@@ -86,9 +86,8 @@
 .animal-details-without-image {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     align-items: center;
-    width: 100%;
 }
 
 .animal-details-without-image p {
@@ -106,7 +105,7 @@
 }
 
 .successfullMessage {
-    color: rgb(24, 195, 44);
+    color: #18c32c;
     font-weight: bold;
     font-size: 2em;
     text-shadow: black;
@@ -125,21 +124,15 @@ form {
 
 form input {
     width: 100%;
+    border-radius: 0.5em;
 }
 
 form textarea {
     width: 100%;
     overflow: visible;
     height: 3em;
-}
-
-.adoption-form {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    padding: 1em;
-    align-items: center;
+    margin-bottom: 1em;
+    border-radius: 0.5em;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

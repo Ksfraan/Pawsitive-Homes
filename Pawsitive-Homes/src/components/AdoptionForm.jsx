@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import ButtonStyled from './ButtonStyled';
-import PropTypes from 'prop-types';
+import '../styles/AdoptionForm.css';
 
-const AdoptionForm = ({ animal }) => {
+const AdoptionForm = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -41,6 +41,7 @@ const AdoptionForm = ({ animal }) => {
                 <label>
                     Name:
                     <input
+                        className=''
                         type='text'
                         name='name'
                         value={formData.name}
@@ -59,7 +60,7 @@ const AdoptionForm = ({ animal }) => {
                     />
                 </label>
                 <label>
-                    Phone Number (+351 Portugal):
+                    Phone Number:
                     <input
                         type='tel'
                         name='phoneNumber'
@@ -86,12 +87,6 @@ const AdoptionForm = ({ animal }) => {
             </form>
         </div>
     );
-};
-
-AdoptionForm.propTypes = {
-    animal: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-    }),
 };
 
 export default AdoptionForm;

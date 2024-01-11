@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import '../styles/Footer.css';
+import { useState } from 'react';
 import ArrowKeyEnter from '../assets/ArrowKeyEnter.png';
 import { Link } from 'react-router-dom';
 import facebookIcon from '../assets/facebookIcon.png';
@@ -11,10 +12,28 @@ import youtubeIcon from '../assets/youtubeIcon.png';
 import telegramIcon from '../assets/telegramIcon.png';
 
 const Footer = () => {
+    const [isButtonClicked, setButtonClicked] = useState(false);
+    const [nameInput, setNameInput] = useState('');
+    const [emailInput, setEmailInput] = useState('');
+
+    const handleButtonClick = () => {
+        setButtonClicked(true);
+        setNameInput('');
+        setEmailInput('');
+
+        setTimeout(() => {
+            setButtonClicked(false);
+        }, 5000);
+    };
+
     return (
         <div className='footer'>
             <div className='news-letter-subscription'>
-                <p>Subscribe to receive all the news.</p>
+                {isButtonClicked ? (
+                    <p>Thank you for signing up!</p>
+                ) : (
+                    <p>Subscribe to receive all the news.</p>
+                )}
             </div>
             <div className='wrapper'>
                 <div className='inputs-button-wrapper'>
@@ -23,6 +42,8 @@ const Footer = () => {
                         placeholder='First Name'
                         name='name'
                         autoComplete='false'
+                        value={nameInput}
+                        onChange={(e) => setNameInput(e.target.value)}
                         className='news-letter-input'
                     />
 
@@ -32,9 +53,14 @@ const Footer = () => {
                             placeholder='Your Best Email'
                             name='emailAddress'
                             autoComplete='false'
+                            value={emailInput}
+                            onChange={(e) => setEmailInput(e.target.value)}
                             className='news-letter-input'
                         />
-                        <button className='submit-news-letter-button'>
+                        <button
+                            className='submit-news-letter-button'
+                            onClick={handleButtonClick}
+                        >
                             <img
                                 src={ArrowKeyEnter}
                                 alt='Arrow key enter'

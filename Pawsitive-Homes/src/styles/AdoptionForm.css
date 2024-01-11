@@ -1,0 +1,30 @@
+.adoption-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1em;
+}
+
+.adoption-form {
+    border: 1px solid #18c32c;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1em;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.adoption-form h2 {
+    color: #18c32c;
+}
+.adoption-form p {
+    color: antiquewhite;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.adoption-form label {
+    color: #18c32c;
+}

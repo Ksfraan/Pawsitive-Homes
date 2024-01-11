@@ -10,7 +10,6 @@ import DashboardPage from './pages/DashboardPage';
 import AnimalsInfoDetails from './pages/AnimalsInfoDetails';
 import AnimalForm from './pages/AnimalForm';
 import Footer from './components/Footer';
-import { AnimalContextProvider } from './context/AnimalListContext';
 import { ViewportSizeContextProvider } from './context/ViewportSizeContext';
 import './styles/App.css';
 import { useEffect } from 'react';
@@ -33,30 +32,30 @@ const App = () => {
             <div className='app-main-wrapper'>
                 <Header />
                 <Navbar />
-                    <Routes>
-                        <Route path='/' element={<DashboardPage />} />
-                        <Route
-                            path='/dogs'
-                            element={<AnimalList animalSpecies='Dog' />}
-                        />
-                        <Route
-                            path='/cats'
-                            element={<AnimalList animalSpecies='Cat' />}
-                        />
-                        <Route
-                            path='/other-animals'
-                            element={<AnimalList animalSpecies='Others' />}
-                        />
-                        <Route
-                            path='/animal/:id'
-                            element={<AnimalsInfoDetails />}
-                        />
-                        <Route path='/add-animal' element={<AnimalForm />} />
-                        <Route path='/about' element={<AboutPage />} />
-                        <Route path='/login' element={<LogIn />} />
-                        <Route path='/signup' element={<SignUp />} />
-                        <Route path='*' element={<Page404 />} />
-                    </Routes>
+                <Routes>
+                    <Route path='/' element={<DashboardPage />} />
+                    <Route
+                        path='/dogs'
+                        element={<AnimalList animalSpecies='Dog' />}
+                    />
+                    <Route
+                        path='/cats'
+                        element={<AnimalList animalSpecies='Cat' />}
+                    />
+                    <Route
+                        path='/other-animals'
+                        element={<AnimalList animalSpecies='Others' />}
+                    />
+                    <Route
+                        path='/animal/:id'
+                        element={<AnimalsInfoDetails />}
+                    />
+                    <Route path='/add-animal' element={<AnimalForm />} />
+                    <Route path='/about' element={<AboutPage />} />
+                    <Route path='/login' element={<LogIn />} />
+                    <Route path='/signup' element={<SignUp />} />
+                    <Route path='*' element={<Page404 />} />
+                </Routes>
                 <Footer />
             </div>
         </ViewportSizeContextProvider>
