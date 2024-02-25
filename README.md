@@ -2,11 +2,11 @@
 
 ## [See the App!](https://main--pawsitivehomes.netlify.app/animal/10)
 
-![App Logo](image.png)
+![App Logo](MainLogo.png)
 
 ## Description
 
-Pawsitive Homes is an online, searchable database of animals who need homes.We are a refuge of hope and joy for our furry friends. Our mission is to transform lives, one paw at a time.
+Pawsitive Homes is an online, searchable database of animals who need homes. We are a refuge of hope and joy for our furry friends. Our mission is to transform lives, one paw at a time.
 While browsing through our application, you're not just searching for a new family best friend.You're embarking on a journey filled with barks, purrs, and unforgettable moments.
 
 ## User Stories
